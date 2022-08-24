@@ -1,0 +1,75 @@
+// To be able to use math.div
+@use "sass:math";
+
+// ====== FONT FAMILY ======
+$font-text: "Roboto", sans-serif;
+
+// ====== COLORS ======
+
+$col-primary: hsl(0, 100%, 50%);
+$col-primary-hoverFocus: hsla(0, 100%, 59%, 1);
+$col-secondary-gray-bg: hsl(203, 9%, 17%);
+$col-black: hsl(0deg, 0%, 0%);
+$col-white: hsl(0, 0%, 100%);
+$col-dashboard-text-lightgray: hsl(227, 9%, 50%);
+$col-dashboard-text-darkgray: hsl(203, 9%, 17%);
+$col-nav-bg-black: hsla(0, 0%, 0%, 0.25);
+$col-bar-bg-gray: hsla(0, 0%, 77%, 0.5);
+$col-graphSessionDuration-overlay: hsla(0, 0%, 0%, .3);
+$col-icon-protein: hsl(204, 100%, 65%);
+$col-icon-protein-bg: hsla(204, 100%, 65%, 0.1);
+$col-icon-glucid: hsl(48, 98%, 52%);
+$col-icon-glucid-bg: hsla(48, 95%, 56%, 1);
+$col-icon-lipid: hsl(343, 98%, 65%);
+$col-icon-lipid-bg: hsla(343, 98%, 65%, 0.1);
+
+// ====== FONT-SIZE ======
+
+$fsize-11px: 0.687rem;
+$fsize-12px: 0.75rem;
+$fsize-14px: 0.875rem;
+$fsize-15px: 0.9375rem;
+$fsize-16px: 1rem;
+$fsize-17px: 1.0625rem;
+$fsize-18px: 1.125rem;
+$fsize-19px: 1.1875rem;
+$fsize-20px: 1.25rem;
+$fsize-21px: 1.3125rem;
+$fsize-24px: 1.5rem;
+$fsize-404-mobile: 6rem;
+$fsize-404-desktop: 18rem;
+
+// ====== FONT WEIGHT ======
+
+$fweight-thin: 100;
+$fweight-light: 300;
+$fweight-regular: 400;
+$fweight-medium: 500;
+$fweight-bold: 700;
+
+// ====== SPACING ======
+
+$space-base: 8px;
+$space-XS: 16px;
+$space-S: 24px;
+$space-M: 32px;
+$space-L: 40px;
+$space-XL: 48px;
+
+// ====== SIZES (HEIGHT, WIDTH) ======
+
+$size-XXS: 8px;
+$size-XS: 16px;
+$size-S: 24px;
+$size-M: 32px;
+$size-L: 40px;
+$size-XL: 48px;
+$size-XXL: 72px;
+$size-tagHeight: 18px;
+
+// ====== RADIUS ======
+
+$radius-cercle: 50%;
+$radius-S: 5px;
+$radius-M: 10px;
+$radius-L: 25px;

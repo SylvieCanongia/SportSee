@@ -1,0 +1,16 @@
+@use './../utils/vars';
+
+
+* {
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  color: vars.$col-primary;
+}
+
+body {
+  font-family: vars.$font-text;
+  font-size: vars.$fsize-16px;
+  font-weight: vars.$fweight-regular;
+}
