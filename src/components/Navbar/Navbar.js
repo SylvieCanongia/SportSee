@@ -2,8 +2,8 @@ import './navbar.scss';
 
 const Navbar = () => {
   return (
-    <div>
-      Navbar feature
+    <div className='navbar'>
+      Navbar component
     </div>
   );
 };

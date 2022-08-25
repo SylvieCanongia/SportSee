@@ -2,8 +2,8 @@ import './sidebar.scss';
 
 const Sidebar = () => {
   return (
-    <div>
-      Sidebar feature
+    <div className='sidebar'>
+      Sidebar component
     </div>
   );
 };

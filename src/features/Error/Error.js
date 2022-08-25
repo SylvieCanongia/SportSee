@@ -2,7 +2,7 @@ import './error.scss';
 
 const Error = () => {
   return (
-    <div>
+    <div className='error'>
       Error feature
     </div>
   );
