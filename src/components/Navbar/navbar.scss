@@ -1,1 +1,41 @@
 @use './../../styles/utils/vars';
+
+.navbar {
+  .nav__container {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    column-gap: 24px;
+    background-color: vars.$col-nav-bg-black;
+    padding: vars.$space-XS vars.$space-S;
+
+    &__menu { 
+      font-size: clamp(0.625rem, 0.4063rem + 1.0938vw, 1.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-transform: capitalize;
+      padding-inline-start: 0;
+
+      &>li>a {
+        color: vars.$col-white;
+      }
+
+      &>li:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .logo {
+      width: 178px;
+      height: 60px;
+    }
+  }
+
+  @media(min-width: 1100px) {
+    .nav__container {
+      &__menu {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

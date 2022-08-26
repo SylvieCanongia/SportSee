@@ -6,11 +6,12 @@
   outline: none;
   border: none;
   text-decoration: none;
-  color: vars.$col-primary;
+  color: vars.$col-black;
+  font-weight: vars.$fweight-medium;
 }
 
 body {
   font-family: vars.$font-text;
   font-size: vars.$fsize-16px;
-  font-weight: vars.$fweight-regular;
+  
 }
