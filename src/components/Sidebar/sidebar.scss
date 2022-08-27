@@ -1,1 +1,25 @@
 @use './../../styles/utils/vars';
+
+.sidebar {
+  min-width: vars.$size-sidebarWidth;
+  background-color: vars.$col-nav-bg-black;
+  padding: vars.$space-XS vars.$space-S;
+  // Centers the menu vertically on the page
+  display: flex;
+  align-items: center;
+
+    &__menu {
+      // menu items vertically positionned
+      display: flex;
+      flex-direction: column;
+      gap: vars.$space-S;
+      
+      background-color: vars.$col-nav-bg-black;
+      padding-inline-start: 0;
+
+      &>li>a {
+          color: vars.$col-white;
+      }
+      // font-size: clamp(0.625rem, 0.4063rem + 1.0938vw, 1.5rem);
+    }
+}

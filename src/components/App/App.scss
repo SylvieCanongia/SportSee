@@ -1,8 +1,18 @@
 @use './../../styles/utils/vars';
 
 .App {
-  max-width: 1440px;
+  // max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   min-height: 100%;
+
+  // So that the middle content (sidebar + dashboard) occupies the full height
+  display: flex;
+  flex-direction: column;
+
+  .middleContent {
+     // So that the middle content (sidebar + dashboard) occupies the full height
+    flex: 1;
+    display: flex;
+  }
 }

@@ -1,5 +1,6 @@
 @use "./../../styles/utils/vars";
 
-.profile {
-  
+.Profile {
+  // So that the dashboard occupies the full available width
+  flex: 1;
 }

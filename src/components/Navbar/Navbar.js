@@ -4,7 +4,6 @@ import LogoNavbar from './logo.svg';
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
       <nav className="navbar">
       <div className="nav__container">
         <div className="nav__container__logo">
@@ -38,7 +37,6 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
-    </div>
   );
 };
 

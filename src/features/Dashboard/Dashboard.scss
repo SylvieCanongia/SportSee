@@ -1,0 +1,8 @@
+@use './../../styles/utils/vars';
+
+.Dashboard {
+  // so that the dashboard occupies the full available height
+  height: 100%;
+
+  background-color: lightgrey;
+}

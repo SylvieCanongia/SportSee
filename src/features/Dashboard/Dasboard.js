@@ -1,11 +1,11 @@
-import './dashboard.scss';
+import './Dashboard.scss';
 
-const Dasboard = () => {
+const Dashboard = () => {
   return (
-    <div className='dashboard'>
+    <div className='Dashboard'>
       Dashboard feature
     </div>
   );
 };
 
-export default Dasboard;
+export default Dashboard;
