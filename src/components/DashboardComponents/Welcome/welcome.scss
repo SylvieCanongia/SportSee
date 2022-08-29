@@ -1,0 +1,13 @@
+@use './../../../styles/utils/vars';
+
+.welcome {
+  font-size: vars.$fsize-24px;
+
+  p:first-of-type {
+    font-size: 48px;
+  }
+
+  &__userName {
+    color: vars.$col-primary;
+  } 
+}

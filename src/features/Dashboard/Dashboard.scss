@@ -1,8 +1,37 @@
 @use './../../styles/utils/vars';
 
-.Dashboard {
+.dashboard {
   // so that the dashboard occupies the full available height
   height: 100%;
+  padding: clamp(1.5rem, -0.3333rem + 8.1481vw, 7rem);
 
-  background-color: lightgrey;
+  // background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  gap: 77px;
+
+  &__graphsAndEnergy__container {
+    display: grid;
+    grid-template-columns: 3fr min(258px, 100%);
+  }
+
+  &__graphs {
+    display: grid;
+    grid-template-columns: minmax(min(835px, 100%), 1fr);
+    grid-template-rows: 1fr 1fr;
+    border: 2px solid orangered;
+  }
+
+  &__graphs__row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border: 1px solid blueviolet;
+  }
+
+  &__energyConsumed {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid aqua;
+  }
 }
