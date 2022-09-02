@@ -10,7 +10,11 @@ const index = () => {
   return (
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="profile" element={<Profile />} />
+          <Route
+            path="user/:id"
+            // render={(props) => <Profile {...props} />}
+            element={<Profile />}
+          />
           <Route path="settings" element={<Settings />} />
           <Route path="community" element={<Community />} />
           {/* default route if no other matches */}

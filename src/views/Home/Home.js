@@ -1,7 +1,16 @@
+import { Link } from "react-router-dom";
+import mockData from "./../../mocks/mock-data.json";
+
 const Home = () => {
+  const userActivityData = mockData.USER_ACTIVITY;
+  console.log(userActivityData);
   return (
     <div className="Home">
-      Sportsee Homepage. Click on navigation menu to go to profile page.
+      {userActivityData.map((user) => (
+        <Link key={`user-${user.userId}`} to={`/user/${user.userId}`} >
+          <button>Utilisateur {user.userId}</button>
+        </Link>
+      ))}
     </div>
   );
 };

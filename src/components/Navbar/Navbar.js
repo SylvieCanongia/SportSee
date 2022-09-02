@@ -20,7 +20,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="profilLink">
-            <NavLink exact="true" to="/profile">
+            <NavLink exact="true" to="/user/12">
               Profil
             </NavLink>
           </li>
