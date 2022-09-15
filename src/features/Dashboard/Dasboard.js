@@ -30,21 +30,22 @@ const Dashboard = (props) => {
     //     setUserMainInfos(response.data)
     //   });
 
-    axiosInstance.get(`/user/${userId}`)
-    .then((response) => {
-      const userData = response.data;
-      setUserMainInfos(userData.data);
-    });
+  //   axiosInstance.get(`/user/${userId}`)
+  //   .then((response) => {
+  //     const userData = response.data;
+  //     setUserMainInfos(userData.data);
+  //   });
   }, []);
 
-  console.log(userMainInfos)
+  // console.log(userMainInfos)
 
   return (
     <div>
       {/* <p>Id : {userMainInfos.id}</p> */}
+      <p>Id : { userId }</p>
       {/* <p>userInfos: {userMainInfos.userInfos}</p> */}
       <section className="dashboard">
-        <Welcome />
+        <Welcome id={ userId }/>
         <article className="dashboard__graphsAndEnergy__container">
           <article className="dashboard__graphs">
             <ActivityGraph />

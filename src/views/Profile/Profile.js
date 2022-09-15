@@ -6,11 +6,11 @@ import './profile.scss';
 const Profile = () => {
   // const { id } = this.props.match.params;
   const { id } = useParams();
-  // console.log(id)
+  console.log(typeof id)
   return (
     
     <div className="Profile">
-      <Dashboard id={id}/>
+      <Dashboard id={Number(id)}/>
     </div>
   );
 };
