@@ -29,12 +29,6 @@ const Dashboard = (props) => {
     //     // console.log(response.data)
     //     setUserMainInfos(response.data)
     //   });
-
-  //   axiosInstance.get(`/user/${userId}`)
-  //   .then((response) => {
-  //     const userData = response.data;
-  //     setUserMainInfos(userData.data);
-  //   });
   }, []);
 
   // console.log(userMainInfos)

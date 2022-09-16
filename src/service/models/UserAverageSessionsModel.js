@@ -18,7 +18,7 @@ UserAverageSessionsModel.propTypes = {
     PropTypes.shape({
       userId: PropTypes.number.isRequired,
       
-      sessions: PropTypes.array(
+      sessions: PropTypes.arrayOf(
         PropTypes.shape({
           day: PropTypes.string.isRequired,
           kilogram: PropTypes.number.isRequired,

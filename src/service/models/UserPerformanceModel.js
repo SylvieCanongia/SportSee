@@ -34,7 +34,7 @@ UserPerformanceModel.propTypes = {
         5: PropTypes.number.isRequired,
         6: PropTypes.number.isRequired
       }),
-      data: PropTypes.array(
+      data: PropTypes.arrayOf(
         PropTypes.shape({
           value: PropTypes.number.isRequired,
           kind: PropTypes.number.isRequired,
