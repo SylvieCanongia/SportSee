@@ -1,7 +1,16 @@
 @use "./../../../../styles/utils/vars";
 
 .activityGraph {
-  border: 2px solid green;
+  // border: 2px solid green;
+  background-color: #FBFBFB;
+  border-radius: 5px;
   // width: 835px;
   // height: 320px;
+
+  &Title {
+    position: absolute;
+    font-size: 14px;
+    margin-block-start: 15px;
+    margin-inline-start: 25px;
+  }
 }

@@ -18,7 +18,7 @@
   &__graphs {
     display: grid;
     grid-template-columns: minmax(min(835px, 100%), 1fr);
-    grid-template-rows: 320px 1fr;
+    grid-template-rows: min(320px, 100%) 1fr;
     border: 2px solid orangered;
   }
 
