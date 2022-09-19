@@ -12,6 +12,11 @@
 
 body {
   font-family: vars.$font-text;
-  font-size: vars.$fsize-16px;
+  font-size: vars.$fsize-14px;
   
+}
+
+// Titles of the graphs
+h3 {
+  font-size: vars.$fsize-14px;
 }

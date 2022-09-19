@@ -12,7 +12,7 @@
 
   &__graphsAndEnergy__container {
     display: grid;
-    grid-template-columns: 3fr min(258px, 100%);
+    grid-template-columns: 3fr minmax(min(200px, 100%), 1fr);
   }
 
   &__graphs {
@@ -25,7 +25,7 @@
   &__graphs__row2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 263px;
     border: 1px solid blueviolet;
   }
 

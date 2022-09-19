@@ -1,1 +1,29 @@
 @use "./../../../../styles/utils/vars";
+
+.score {
+  position: relative;
+  &Label {
+    position: absolute;
+    top: vars.$space-S;
+  }
+  &BarLabel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: vars.$col-dashboard-text-lightgray;
+
+    & span {
+      font-size: vars.$fsize-20px;
+      font-weight: vars.$fweight-bold;
+    }
+  }
+  .progress-label {
+    font-weight: bold;
+  }
+}
