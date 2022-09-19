@@ -10,7 +10,9 @@ export class UserMainDataModel {
       age: userMainData.userInfos.age,
     };
 
-    this.todayScore = userMainData.todayScore;
+    // condition || here because of a property name error in backend data
+    // between user 12 and 18
+    this.todayScore = userMainData.todayScore || userMainData.score;
     this.keyData = {
       calorieCount: userMainData.keyData.calorieCount,
       proteinCount: userMainData.keyData.proteinCount,

@@ -5,14 +5,14 @@ import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
 import './welcome.scss';
 
 const Welcome = ({ id }) => {
-  console.log(getUserMainData(id))
-  console.log("USER_MAIN_DATA mock :", USER_MAIN_DATA);
-  console.log("props 'id' héritée de 'Dashboard' :", id);
+  // console.log(getUserMainData(id))
+  // console.log("USER_MAIN_DATA mock :", USER_MAIN_DATA);
+  // console.log("props 'id' héritée de 'Dashboard' :", id);
   const userData = USER_MAIN_DATA.find((userData) => userData.id === id)
-  console.log("userData mock :", userData);
-  console.log("--- création model MainUserData mock ---")
+  // console.log("userData mock :", userData);
+  // console.log("--- création model MainUserData mock ---")
   const user = new UserMainDataModel(userData)
-  console.log(user)
+  // console.log(user)
 
   // const [userMainInfos, setUserMainInfos] = useState(null);
 

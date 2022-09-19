@@ -21,7 +21,7 @@ import "./Dashboard.scss";
 
 const Dashboard = (props) => {
   const [userMainInfos, setUserMainInfos] = useState(null);
-  const userId = props.id;
+  const id = props.id;
 
   useEffect(() => {
     // getUserMainData(userId)
@@ -36,17 +36,17 @@ const Dashboard = (props) => {
   return (
     <div>
       {/* <p>Id : {userMainInfos.id}</p> */}
-      <p>Id : { userId }</p>
+      <p>Id : { id }</p>
       {/* <p>userInfos: {userMainInfos.userInfos}</p> */}
       <section className="dashboard">
-        <Welcome id={ userId }/>
+        <Welcome id={ id }/>
         <article className="dashboard__graphsAndEnergy__container">
           <article className="dashboard__graphs">
             <ActivityGraph />
             <div className="dashboard__graphs__row2">
               <AverageSessionGraph />
               <PerformanceGraph />
-              <Score />
+              <Score id={ id }/>
             </div>
           </article>
           <article className="dashboard__energyConsumed">
