@@ -4,7 +4,8 @@
   position: relative;
   &Label {
     position: absolute;
-    top: vars.$space-S;
+    top: vars.$space-S * 0.8;
+    left: vars.$space-S;
   }
   &BarLabel {
     position: absolute;

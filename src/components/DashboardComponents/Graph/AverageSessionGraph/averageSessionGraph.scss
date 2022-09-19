@@ -1,1 +1,14 @@
 @use "./../../../../styles/utils/vars";
+
+.averageSessionGraph {
+  position: relative;
+  background-color: vars.$col-primary;
+
+  &Label {
+    position: absolute;
+    top: vars.$space-S * 0.8;
+    left: vars.$space-S;
+    width: 130px;
+    color: vars.$col-white;
+  }
+}

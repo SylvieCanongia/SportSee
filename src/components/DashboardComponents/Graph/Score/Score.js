@@ -6,14 +6,14 @@ import './score.scss';
 
 const Score = ({id}) => {
   // console.log(id)
-  const userData = USER_MAIN_DATA.find((userData) => userData.id === id)
-  console.log("userData mock :", userData);
-  console.log("--- création model MainUserData mock ---")
-  const user = new UserMainDataModel(userData)
-  console.log(user)
+  const userMainData = USER_MAIN_DATA.find((userData) => userData.id === id);
+  // console.log("userData mock :", userMainData);
+  // console.log("--- création model MainUserData mock ---")
+  const userData = new UserMainDataModel(userMainData);
+  // console.log(userData)
 
   // Creates the array Recharts uses to get the data.
-  const data = [user];
+  const data = [userData];
   const scoreInPercentage = data[0].todayScore * 100;
   const scoreInDegrees = data[0].todayScore * 360;
   // console.log(data)
@@ -33,7 +33,7 @@ const Score = ({id}) => {
           endAngle={-180 - scoreInDegrees}
           barSize={10}
         >
-          <RadialBar cornerRadius={50} label={false} clockWise={true} dataKey='todayScore' fill= "hsl(0, 100%, 50%)"/>
+          <RadialBar cornerRadius={50} label={false} clockWise={true} dataKey='todayScore' name="Score du jour" fill= "hsl(0, 100%, 50%)"/>
           <Tooltip />
           
         </RadialBarChart>

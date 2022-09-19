@@ -8,7 +8,6 @@ const Profile = () => {
   const { id } = useParams();
   console.log(typeof id)
   return (
-    
     <div className="Profile">
       <Dashboard id={Number(id)}/>
     </div>
