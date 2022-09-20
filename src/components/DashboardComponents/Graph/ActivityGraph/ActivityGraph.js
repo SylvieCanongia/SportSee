@@ -1,57 +1,28 @@
-import React, { PureComponent } from "react";
-import { BarChart, Bar, ReferenceLine, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Text, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 import { USER_ACTIVITY } from "../../../../mocks/mock-data";
 // import {getUserActivity} from '../../../../service/user-http.service';
 import { UserActivityModel } from "./../../../../service/models/UserActivityModel";
 import "./activityGraph.scss";
 
-const data = [
-  {
-    day: "1",
-    kilogram: 80,
-    calories: 240,
-  },
-  {
-    day: "2",
-    kilogram: 80,
-    calories: 220,
-  },
-  {
-    day: "3",
-    kilogram: 81,
-    calories: 280,
-  },
-  {
-    day: "4",
-    kilogram: 81,
-    calories: 290,
-  },
-  {
-    day: "5",
-    kilogram: 80,
-    calories: 160,
-  },
-  {
-    day: "6",
-    kilogram: 78,
-    calories: 162,
-  },
-  {
-    day: "7",
-    kilogram: 76,
-    calories: 39,
-  },
-];
+const ActivityGraph = ({ id }) => {
+  const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
+  // console.log("=======================")
+  // console.log("userActivity graph userData from id :")
+  // console.log(userActivityData)
+  // console.log("=======================")
 
-const ActivityGraph = () => {
+  const userData = new UserActivityModel(userActivityData);
+  // console.log(userData)
+
+  const data = userData.sessions;
+  // console.log(data)
+
   return (
     <div className="activityGraph">
       <h3 className="activityGraphTitle">Activité quotidienne</h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          // width={835}
-          // height={320}
           outerRadius={60}
           data={data}
           margin={{
@@ -62,7 +33,6 @@ const ActivityGraph = () => {
           }}
           barSize={7}
           barGap={8}
-          // background={{fill: "#FBFBFB"}}
         >
           <CartesianGrid strokeDasharray="2 2" vertical={false} />
           <XAxis dataKey="day" stroke="hsl(228, 9%, 64%)" />

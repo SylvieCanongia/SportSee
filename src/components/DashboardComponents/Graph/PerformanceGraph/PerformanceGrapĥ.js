@@ -1,4 +1,4 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { USER_PERFORMANCE } from '../../../../mocks/mock-data';
 // import {getUserPerformance} from '../../../../service/user-http.service';
 import { UserPerformanceModel } from '../../../../service/models/UserPerformanceModel';
@@ -6,12 +6,12 @@ import { UserPerformanceModel } from '../../../../service/models/UserPerformance
 import './performanceGraph.scss';
 
 const PerformanceGrapĥ = ({ id }) => {
-  console.log(id)
+  // console.log(id)
   const userPerformanceData = USER_PERFORMANCE.find((userData) => userData.userId === id);
-  console.log("=======================")
-  console.log("performanceGraph user data from id :")
-  console.log(userPerformanceData)
-  console.log("=======================")
+  // console.log("=======================")
+  // console.log("performanceGraph user data from id :")
+  // console.log(userPerformanceData)
+  // console.log("=======================")
 
   const userData = new UserPerformanceModel(userPerformanceData);
   // We use the property data inside the object userData.
@@ -33,7 +33,6 @@ const PerformanceGrapĥ = ({ id }) => {
       >
           <PolarGrid stroke='white' radialLines={false} />
           <PolarAngleAxis dataKey="kind" fontSize="12px" stroke='white' tickLine={false} />
-          {/* <PolarRadiusAxis /> */}
           <Radar name="Perf" dataKey="value" fill="hsl(0, 100%, 50%)" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>
