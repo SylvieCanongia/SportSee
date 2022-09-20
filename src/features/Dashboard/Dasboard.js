@@ -45,7 +45,7 @@ const Dashboard = (props) => {
             <ActivityGraph id={ id }/>
             <div className="dashboard__graphs__row2">
               <AverageSessionGraph id={ id }/>
-              <PerformanceGraph />
+              <PerformanceGraph id={ id }/>
               <Score id={ id }/>
             </div>
           </article>

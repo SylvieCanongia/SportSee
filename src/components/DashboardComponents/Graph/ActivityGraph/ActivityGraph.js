@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { BarChart, Bar, ReferenceLine, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Text, ResponsiveContainer } from "recharts";
 
 import { USER_ACTIVITY } from "../../../../mocks/mock-data";
+// import {getUserActivity} from '../../../../service/user-http.service';
 import { UserActivityModel } from "./../../../../service/models/UserActivityModel";
 import "./activityGraph.scss";
 

@@ -1,4 +1,4 @@
-import { AreaChart, Area, LineChart, Tooltip, ResponsiveContainer,CartesianGrid, XAxis, YAxis, Legend, Line } from 'recharts';
+import { AreaChart, Area, Tooltip, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Legend, Line } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
 // import {getUserAverageSessionData} from '../../../../service/user-http.service';
 import { UserAverageSessionsModel } from '../../../../service/models/UserAverageSessionsModel';
@@ -6,18 +6,17 @@ import { UserAverageSessionsModel } from '../../../../service/models/UserAverage
 import './averageSessionGraph.scss';
 
 const AverageSessionGraph = ({id}) => {
-  console.log(id)
+  // console.log(id)
   const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
-  console.log("=======================")
-  console.log("averageSessionGraph user data from id :")
-  console.log(userAverageSessionData)
-  console.log("=======================")
+  // console.log("=======================")
+  // console.log("averageSessionGraph user data from id :")
+  // console.log(userAverageSessionData)
+  // console.log("=======================")
 
   const userData = new UserAverageSessionsModel(userAverageSessionData);
   // Creates the array Recharts uses to get the data.
   const data = [userData];
-  console.log(userData)
-  
+  // console.log(userData)
 
   return (
     <div className='averageSessionGraph'>
@@ -25,9 +24,8 @@ const AverageSessionGraph = ({id}) => {
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
             // width={730}
-            // height={250}
+            // height={263}
             data={data}
-            // margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
             margin={{
             top: 30,
             right: 5,

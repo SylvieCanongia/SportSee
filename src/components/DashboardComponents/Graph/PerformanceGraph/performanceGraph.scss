@@ -1,1 +1,6 @@
 @use "./../../../../styles/utils/vars";
+
+.performanceGraph {
+  height: 263px;
+  background-color: vars.$col-dashboard-text-darkgray;
+}

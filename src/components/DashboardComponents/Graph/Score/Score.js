@@ -24,14 +24,20 @@ const Score = ({id}) => {
     <p className="scoreBarLabel"><span> {scoreInPercentage} %</span>de votre objectif</p>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart 
-          // width={730} 
-          // height={250} 
+          // width={263} 
+          // height={263} 
           innerRadius="85%" 
           outerRadius="100%" 
           data={data} 
           startAngle={-180} 
           endAngle={-180 - scoreInDegrees}
           barSize={10}
+          margin={{
+            top: 30,
+            right: 5,
+            left: 5,
+            bottom: 15,
+          }}
         >
           <RadialBar cornerRadius={50} label={false} clockWise={true} dataKey='todayScore' name="Score du jour" fill= "hsl(0, 100%, 50%)"/>
           <Tooltip />

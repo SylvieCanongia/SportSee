@@ -1,22 +1,26 @@
 import PropTypes from 'prop-types';
 
-class UserPerformanceModel {
+export class UserPerformanceModel {
   constructor(performance) {
     this.userId = performance.userId;
-    // converts the object
-    // this.kind = new Map(Object.entries(performance.kind));
-    this.kind = {
-      1: 'cardio',
-      2: 'energy',
-      3: 'endurance',
-      4: 'strength',
-      5: 'speed',
-      6: 'intensity'
-    }
+    // this.kind = {
+    //   1: 'cardio',
+    //   2: 'energy',
+    // ...
+    // }
+    this.kind = performance.kind
     this.data = performance.data.map((perfData) => (
       {
       value: perfData.value,
-      kind: perfData.kind
+      // perfData.kind is the index (ex: 1 or 2 => output "cardio" or "energy"...)
+      // perfData: [
+      //   {
+      //       value: 80,
+      //       kind: 1
+      //   },
+      // .....
+      // ]
+      kind: this.kind[perfData.kind]
       }
     ));
   };
