@@ -3,7 +3,8 @@
 .dashboard {
   // so that the dashboard occupies the full available height
   height: 100%;
-  padding: clamp(1.5rem, -0.3333rem + 8.1481vw, 7rem);
+  padding-inline: clamp(1.5rem, -0.3333rem + 8.1481vw, 7rem);
+  padding-block: clamp(1rem, 0.0000rem + 4.4444vw, 4rem);
 
   display: flex;
   flex-direction: column;

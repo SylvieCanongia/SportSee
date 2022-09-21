@@ -23,13 +23,11 @@ const AverageSessionGraph = ({id}) => {
       <h3 className='averageSessionGraphLabel'>Durée moyenne des sessions</h3>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
-            // width={730}
-            // height={263}
             data={data}
             margin={{
             top: 30,
-            right: 5,
-            left: 5,
+            right: 8,
+            left: 8,
             bottom: 15,
           }}
           >

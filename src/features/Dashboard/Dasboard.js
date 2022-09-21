@@ -36,7 +36,7 @@ const Dashboard = (props) => {
   return (
     <div>
       {/* <p>Id : {userMainInfos.id}</p> */}
-      <p>Id : { id }</p>
+      {/* <p>Id : { id }</p> */}
       {/* <p>userInfos: {userMainInfos.userInfos}</p> */}
       <section className="dashboard">
         <Welcome id={ id }/>
