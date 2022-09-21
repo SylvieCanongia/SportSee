@@ -1,0 +1,29 @@
+@use './../../../styles/utils/vars';
+
+.energy {
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &Card {
+    display: flex;
+    gap: vars.$space-S;
+  }
+
+  &Data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &Data>span:nth-child(2) {
+    color: vars.$col-dashboard-text-lightgray;
+  }
+
+  &Count {
+    font-weight: vars.$fweight-bold;font-size: vars.$fsize-20px;
+  }
+}

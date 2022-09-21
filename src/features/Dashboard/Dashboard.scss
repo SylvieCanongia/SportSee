@@ -5,7 +5,6 @@
   height: 100%;
   padding: clamp(1.5rem, -0.3333rem + 8.1481vw, 7rem);
 
-  // background-color: lightgrey;
   display: flex;
   flex-direction: column;
   gap: 77px;
@@ -19,19 +18,11 @@
     display: grid;
     grid-template-columns: minmax(min(835px, 100%), 1fr);
     grid-template-rows: min(320px, 100%) auto;
-    border: 2px solid orangered;
   }
 
   &__graphs__row2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 20px;
-    border: 1px solid blueviolet;
-  }
-
-  &__energyConsumed {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid aqua;
   }
 }

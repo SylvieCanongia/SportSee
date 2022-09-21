@@ -12,10 +12,10 @@ import PerformanceGraph from "../../components/DashboardComponents/Graph/Perform
 import Score from "../../components/DashboardComponents/Graph/Score/Score";
 
 // Energy consumed detail
-import Calories from "../../components/DashboardComponents/EnergyConsumed/Calories/Calories";
-import Proteins from "../../components/DashboardComponents/EnergyConsumed/Proteins/Proteins";
-import Sugars from "../../components/DashboardComponents/EnergyConsumed/Sugars/Sugars";
-import Lipids from "../../components/DashboardComponents/EnergyConsumed/Lipids/Lipids";
+import Energy from "../../components/DashboardComponents/Energy/Energy";
+// import Proteins from "../../components/DashboardComponents/stopEnergyConsumed/Proteins/Proteins";
+// import Sugars from "../../components/DashboardComponents/stopEnergyConsumed/Sugars/Sugars";
+// import Lipids from "../../components/DashboardComponents/stopEnergyConsumed/Lipids/Lipids";
 
 import "./Dashboard.scss";
 
@@ -50,10 +50,10 @@ const Dashboard = (props) => {
             </div>
           </article>
           <article className="dashboard__energyConsumed">
-            <Calories />
-            <Proteins />
-            <Sugars />
-            <Lipids />
+            <Energy id={ id } />
+            {/* <Proteins id={ id } />
+            <Sugars id={ id } />
+            <Lipids id={ id } /> */}
           </article>
         </article>
       </section>
