@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { USER_MAIN_DATA } from '../../../mocks/mock-data';
-import {getUserMainData} from '../../../service/user-http.service';
+// import {getUserMainData} from '../../../service/user-http.service';
 import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
 import './welcome.scss';
 

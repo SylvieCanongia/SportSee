@@ -51,9 +51,6 @@ const Dashboard = (props) => {
           </article>
           <article className="dashboard__energyConsumed">
             <Energy id={ id } />
-            {/* <Proteins id={ id } />
-            <Sugars id={ id } />
-            <Lipids id={ id } /> */}
           </article>
         </article>
       </section>
