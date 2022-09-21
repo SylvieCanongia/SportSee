@@ -1,15 +1,12 @@
 @use "./../../../../styles/utils/vars";
 
 .activityGraph {
-  // border: 2px solid green;
-  background-color: #FBFBFB;
+  background-color: vars.$col-graph-bg;
   border-radius: 5px;
-  // width: 835px;
-  // height: 320px;
 
   &Title {
     position: absolute;
-    margin-block-start: 15px;
-    margin-inline-start: 25px;
+    margin-block-start: vars.$space-S;
+    margin-inline-start: vars.$space-S;
   }
 }

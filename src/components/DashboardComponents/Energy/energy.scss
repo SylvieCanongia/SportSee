@@ -2,15 +2,37 @@
 
 .energy {
   height: 100%;
-  padding: 24px;
+  // padding-inline: vars.$space-M;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+
+  @media screen and (max-width: 1560px) {
+    height: revert;
+    gap: vars.$space-M;
+  }
+
+  @media screen and (max-width: 1200px) {
+    gap: vars.$space-S;
+  }
 
   &Card {
     display: flex;
+    padding: vars.$space-M;
     gap: vars.$space-S;
+    background-color: vars.$col-graph-bg;
+    border-radius: vars.$radius-S;
+
+    @media screen and (max-width: 1200px) {
+      padding: vars.$space-XS;
+      gap: vars.$space-XS;
+    }
+
+
+    .icon {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   &Data {

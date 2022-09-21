@@ -12,17 +12,19 @@
   &__graphsAndEnergy__container {
     display: grid;
     grid-template-columns: 4fr 1fr;
+    gap: vars.$space-M;
   }
 
   &__graphs {
     display: grid;
     grid-template-columns: minmax(min(835px, 100%), 1fr);
     grid-template-rows: min(320px, 100%) auto;
+    gap: vars.$space-M;
   }
 
   &__graphs__row2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: 20px;
+    gap: vars.$space-M;
   }
 }

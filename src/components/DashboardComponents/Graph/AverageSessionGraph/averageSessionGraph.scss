@@ -3,6 +3,7 @@
 .averageSessionGraph {
   position: relative;
   background-color: vars.$col-primary;
+  border-radius: vars.$radius-S;
   height: 263px;
 
   &Label {

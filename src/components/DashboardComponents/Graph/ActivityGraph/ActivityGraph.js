@@ -26,10 +26,10 @@ const ActivityGraph = ({ id }) => {
           outerRadius={60}
           data={data}
           margin={{
-            top: 15,
+            top: 24,
             right: 5,
             left: 25,
-            bottom: 15,
+            bottom: 24,
           }}
           barSize={7}
           barGap={8}

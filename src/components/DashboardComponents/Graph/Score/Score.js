@@ -24,8 +24,6 @@ const Score = ({id}) => {
     <p className="scoreBarLabel"><span> {scoreInPercentage} %</span>de votre objectif</p>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart 
-          // width={263} 
-          // height={263} 
           innerRadius="85%" 
           outerRadius="100%" 
           data={data} 

@@ -3,6 +3,9 @@
 .score {
   position: relative;
   height: 263px;
+  background-color: vars.$col-graph-bg;
+  border-radius: vars.$radius-S;
+
   &Label {
     position: absolute;
     top: vars.$space-S * 0.8;
