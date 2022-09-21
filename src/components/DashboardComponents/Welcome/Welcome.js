@@ -12,8 +12,11 @@ const Welcome = ({ id }) => {
   // console.log("userData mock :", userData);
   // console.log("--- création model MainUserData mock ---")
   const user = new UserMainDataModel(userData)
-  // console.log(user)
+  console.log(user)
 
+  const data = user.userInfos
+  console.log(data);
+  
   // const [userMainInfos, setUserMainInfos] = useState(null);
 
   // useEffect(() => {
@@ -32,7 +35,7 @@ const Welcome = ({ id }) => {
 
   return (
     <div className='welcome'>
-      <p>Bonjour <span className='welcome__userName'> { user.userInfos.firstName }</span></p>
+      <p>Bonjour <span className='welcome__userName'> { data.firstName }</span></p>
       <p className="welcome__congrats">Félicitations ! Vous avez explosé vos objectifs hier <span>&#128079;</span></p>
     </div>
   );
