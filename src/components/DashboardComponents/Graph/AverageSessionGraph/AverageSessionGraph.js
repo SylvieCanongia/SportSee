@@ -33,13 +33,10 @@ const AverageSessionGraph = ({id}) => {
           >
           <CartesianGrid  horizontal="false" vertical="false" width={0} height={0} />
           <XAxis dataKey="day" tick={{stroke: 'white', strokeWidth: 1}} tickLine={false} axisLine={false}/>
-          {/* <YAxis datakey="sessionLength"/> */}
           <Tooltip />
-          {/* <Legend /> */}
           {data.map((data, index) => (
-            <Area type="monotone" dot={false} fill="gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.106534) 100%)" fillOpacity={0.1} stroke= "hsl(0, 0%, 100%)" strokeWidth={2} dataKey="sessionLength" data={data.sessions} name="min"  key={index} margin={30} />
+            <Area type="monotone" dot={false} fill="gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.106534) 100%)" fillOpacity={0.1} stroke= "hsl(0, 0%, 100%)" strokeWidth={2} dataKey="sessionLength" data={data.sessions} name="min"  key={index} margin={30} className="area"/>
           ))}
-          {/* <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" /> */}
         </AreaChart>
       </ResponsiveContainer>
     </div>

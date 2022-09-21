@@ -35,8 +35,8 @@ const ActivityGraph = ({ id }) => {
           barGap={8}
         >
           <CartesianGrid strokeDasharray="2 2" vertical={false} />
-          <XAxis dataKey="day" stroke="hsl(228, 9%, 64%)" />
-          <YAxis stroke="hsl(228, 9%, 64%)" orientation="right" />
+          <XAxis dataKey="day" stroke="hsl(228, 9%, 64%)" tickLine={0} />
+          <YAxis stroke="hsl(228, 9%, 64%)" orientation="right" tickLine={0} axisLine={false}/>
           <Tooltip />
           <Legend verticalAlign="top" align="right" height={45} iconType="circle" iconSize="10" wrapperStyle={{ paddingRight: "10px", fontSize: "14px" }} />
           <Bar dataKey="kilogram" name="Poids (kg)" fill="hsl(203, 9%, 17%)" radius={[50, 50, 0, 0]} width={10} />
