@@ -6,7 +6,7 @@ import { UserActivityModel } from "./../../../../service/models/UserActivityMode
 import "./activityGraph.scss";
 
 const ActivityGraph = ({ id }) => {
-  // MOCK DATA --------
+  // MOCKED DATA --------
   // const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
   // const userData = new UserActivityModel(userActivityData);
   // const data = userData.sessions;
@@ -19,7 +19,6 @@ const ActivityGraph = ({ id }) => {
    
     getUserActivity(id)
       .then((response) => {
-        // console.log(response.data.userInfos)
         const userData = new UserActivityModel(response.data);
         setData(userData.sessions);
       });

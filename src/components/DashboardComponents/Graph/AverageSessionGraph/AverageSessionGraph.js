@@ -19,7 +19,6 @@ const AverageSessionGraph = ({id}) => {
    
     getUserAverageSession(id)
       .then((response) => {
-        console.log(response.data)
         const userData = new UserAverageSessionsModel(response.data);
         setData([userData]);
       });
