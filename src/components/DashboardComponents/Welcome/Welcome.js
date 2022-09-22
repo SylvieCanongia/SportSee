@@ -12,11 +12,11 @@ const Welcome = ({ id }) => {
   // console.log("userData mock :", userData);
   // console.log("--- création model MainUserData mock ---")
   const user = new UserMainDataModel(userData)
-  console.log(user)
+  // console.log(user)
 
   const data = user.userInfos
-  console.log(data);
-  
+  // console.log(data);
+
   // const [userMainInfos, setUserMainInfos] = useState(null);
 
   // useEffect(() => {

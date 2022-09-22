@@ -30,6 +30,9 @@ const Sidebar = () => {
               </Link>
             </li>
           </ul>
+          <p className="copyright">
+            Copyright, Sportsee 2020
+          </p>
       </nav>
   );
 };

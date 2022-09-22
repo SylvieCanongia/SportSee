@@ -1,25 +1,45 @@
 @use './../../styles/utils/vars';
 
 .sidebar {
+  position: relative;
   min-width: vars.$size-sidebarWidth;
   background-color: vars.$col-nav-bg-black;
   padding: vars.$space-XS vars.$space-S;
   // Centers the menu vertically on the page
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // gap: 100px;
   align-items: center;
+  
 
     &__menu {
       // menu items vertically positionned
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: vars.$space-S;
       
       background-color: vars.$col-nav-bg-black;
       padding-inline-start: 0;
 
+      &>li {
+        width: 64px;
+        height: 64px;
+      }
+
       &>li>a {
           color: vars.$col-white;
       }
-      // font-size: clamp(0.625rem, 0.4063rem + 1.0938vw, 1.5rem);
+    }
+
+    .copyright {
+      transform: rotate(-90deg);
+      color: vars.$col-white;
+      position: absolute;
+      bottom: 100px;
+      width: max-content;
+      font-size: vars.$fsize-12px;
     }
 }
