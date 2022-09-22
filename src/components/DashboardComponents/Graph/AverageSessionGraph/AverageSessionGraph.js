@@ -7,10 +7,12 @@ import { UserAverageSessionsModel } from '../../../../service/models/UserAverage
 import './averageSessionGraph.scss';
 
 const AverageSessionGraph = ({id}) => {
+  // MOCKED DATA --------
   // const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
   // const userData = new UserAverageSessionsModel(userAverageSessionData);
   // Creates the array Recharts uses to get the data.
   // const data = [userData];
+  // ------------------
 
   // API DATA
   const [data, setData] = useState(null);
