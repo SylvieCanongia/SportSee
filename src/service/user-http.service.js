@@ -5,7 +5,7 @@ import { axiosInstance } from "../http-common";
 //and key data (calorie, macronutrient, etc.).
 export const getUserMainData = (userId) => {
   return new Promise((onSuccess, onFail) => {
-    axiosInstance.get(`/user/${userId}`)
+     axiosInstance.get(`/user/${userId}`)
       .then((response, error) => {
         if(!response || error) {
           return onFail(`Erreur : ${error}`);

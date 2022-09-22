@@ -1,0 +1,19 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &>div:first-child {
+    margin-block-start: 30px;
+    font-weight: bold;
+  }
+
+  &Button {
+    cursor: pointer;
+    padding: 15px 25px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: hsl(0, 100%, 70%);;
+  }
+}
