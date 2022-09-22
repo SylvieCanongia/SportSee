@@ -19,17 +19,14 @@ const Welcome = ({ id }) => {
     getUserMainData(id)
       .then((response) => {
         // console.log(response.data.userInfos)
-        setData(new UserMainDataModel(response.data));
+        const userData = new UserMainDataModel(response.data)
+        setData(userData.userInfos);
       });
   }, [id]); 
 
   return (
     <div className='welcome'>
-      {/* MOCK DATA */}
-      {/* <p>Bonjour <span className='welcome__userName'> { data.firstName }</span></p> */}
-      
-      {/* API DATA */}
-      { data && <p>Bonjour <span className='welcome__userName'> { data.userInfos.firstName }</span></p> }
+      { data && <p>Bonjour <span className='welcome__userName'> { data.firstName }</span></p> }
       
       <p className="welcome__congrats">Félicitations ! Vous avez explosé vos objectifs hier <span>&#128079;</span></p>
     </div> 

@@ -31,7 +31,7 @@ export const getUserActivity = (userId) => {
 //retrieves the average sessions of a user per day. The week starts on Monday.
 export const getUserAverageSession = (userId) => {
   return new Promise((onSuccess, onFail) => {
-    axiosInstance.get(`/user/${userId}//average-sessions`)
+    axiosInstance.get(`/user/${userId}/average-sessions`)
       .then((response, error) => {
         if(!response || error) {
           return onFail(`Erreur : ${error}`);
