@@ -1,22 +1,29 @@
+import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-
-import { USER_ACTIVITY } from "../../../../mocks/mock-data";
-// import {getUserActivity} from '../../../../service/user-http.service';
+// import { USER_ACTIVITY } from "../../../../mocks/mock-data";
+import {getUserActivity} from '../../../../service/user-http.service';
 import { UserActivityModel } from "./../../../../service/models/UserActivityModel";
 import "./activityGraph.scss";
 
 const ActivityGraph = ({ id }) => {
-  const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
-  // console.log("=======================")
-  // console.log("userActivity graph userData from id :")
-  // console.log(userActivityData)
-  // console.log("=======================")
+  // MOCK DATA --------
+  // const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
+  // const userData = new UserActivityModel(userActivityData);
+  // const data = userData.sessions;
+  // ------------------
 
-  const userData = new UserActivityModel(userActivityData);
-  // console.log(userData)
+  // API DATA
+  const [data, setData] = useState(null);
 
-  const data = userData.sessions;
-  // console.log(data)
+  useEffect(() => {
+   
+    getUserActivity(id)
+      .then((response) => {
+        // console.log(response.data.userInfos)
+        const userData = new UserActivityModel(response.data);
+        setData(userData.sessions);
+      });
+  }, [id]);
 
   return (
     <div className="activityGraph">

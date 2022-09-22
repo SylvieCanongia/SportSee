@@ -9,7 +9,6 @@ const Welcome = ({ id }) => {
   // const userData = USER_MAIN_DATA.find((userData) => userData.id === id);
   // const user = new UserMainDataModel(userData)
   // const data = user.userInfos
-  // console.log(data);
   // ------------------
 
   // API DATA
@@ -22,9 +21,7 @@ const Welcome = ({ id }) => {
         // console.log(response.data.userInfos)
         setData(new UserMainDataModel(response.data));
       });
-  }, []);
-
-  // console.log(data) 
+  }, [id]); 
 
   return (
     <div className='welcome'>
