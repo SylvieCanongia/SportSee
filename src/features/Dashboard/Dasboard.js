@@ -10,9 +10,8 @@ import Energy from "../../components/DashboardComponents/Energy/Energy";
 
 import "./Dashboard.scss";
 
-const Dashboard = (props) => {
-  const id = props.id;
-
+const Dashboard = ({ id }) => {
+  console.log(id)
   return (
     <div>
       <section className="dashboard">
