@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-// import { getUserMainData } from './../user-http.service';
 
 export class UserMainDataModel {
   constructor(userMainData) {
@@ -10,8 +9,8 @@ export class UserMainDataModel {
       age: userMainData.userInfos.age,
     };
 
-    // condition || here because of a property name error in backend data
-    // between user 12 and 18
+    // condition || here because there's a property name error in backend data
+    // between user 12 and 18 (both 'score' and 'todayScore')
     this.todayScore = userMainData.todayScore || userMainData.score;
     this.keyData = {
       calorieCount: userMainData.keyData.calorieCount,

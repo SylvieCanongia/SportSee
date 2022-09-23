@@ -4,11 +4,12 @@ import Dashboard from "./../../features/Dashboard/Dasboard";
 import './profile.scss';
 
 const Profile = () => {
-  // const { id } = this.props.match.params;
+  // Get the userId param from the URL.
   const { id } = useParams();
   // console.log(typeof id)
   return (
     <div className="Profile">
+      {/* id is type string so it is converted to number */}
       <Dashboard id={Number(id)}/>
     </div>
   );

@@ -6,7 +6,8 @@ export class UserActivityModel {
     this.userId = activity.userId;
     this.sessions = activity.sessions.map((session) => (
       {
-      // Keeps only the day number of the date. For example '1'
+      // Keeps only the day number of the date
+      // (for ex: day: '2020-07-01' => output : '1')
       day: session.day.toString().slice(-1),
       kilogram: session.kilogram,
       calories: session.calories

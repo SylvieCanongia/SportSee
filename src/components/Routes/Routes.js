@@ -12,13 +12,12 @@ const index = () => {
           <Route path="/" element={<Home />} />
           <Route
             path="user/:id"
-            // render={(props) => <Profile {...props} />}
             element={<Profile />}
           />
           <Route path="settings" element={<Settings />} />
           <Route path="community" element={<Community />} />
           {/* default route if no other matches */}
-        <Route path="*" element={<Error />} />
+          <Route path="*" element={<Error />} />
         </Routes>
   );
 };

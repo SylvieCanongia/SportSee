@@ -18,7 +18,6 @@ const Welcome = ({ id }) => {
    
     getUserMainData(id)
       .then((response) => {
-        // console.log(response.data.userInfos)
         const userData = new UserMainDataModel(response.data)
         setData(userData.userInfos);
       });

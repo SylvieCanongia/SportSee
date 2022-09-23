@@ -3,16 +3,19 @@ import PropTypes from 'prop-types';
 export class UserPerformanceModel {
   constructor(performance) {
     this.userId = performance.userId;
+    // kind is the type of activity :
     // this.kind = {
     //   1: 'cardio',
     //   2: 'energy',
     // ...
     // }
-    this.kind = performance.kind
+    this.kind = performance.kind 
     this.data = performance.data.map((perfData) => (
       {
       value: perfData.value,
-      // perfData.kind is the index (ex: 1 or 2 => output "cardio" or "energy"...)
+      // [perfData.kind] is the index of the activity
+      // of the above property this.kind (ex: [perfData.kind] = 1 or 2 => output "cardio" or "energy"...)
+      // data received from API :
       // perfData: [
       //   {
       //       value: 80,
