@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { USER_MAIN_DATA } from '../../../mocks/mock-data';
+import { USER_MAIN_DATA } from '../../../mocks/mock-data';
 import { getUserMainData } from '../../../service/user-http.service';
 import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
 
@@ -10,26 +10,28 @@ import LipidIcon from './fat-icon.svg';
 
 import './energy.scss';
 
-const Energy = ({ id }) => {
-  // MOCKED DATA --------
-  // const userData = USER_MAIN_DATA.find((userData)=> userData.id === id);
-  // console.log(userData);
-  // const user = new UserMainDataModel(userData);
-  // console.log(user);
-  // const energyData = user.keyData;
-  // console.log(energyData)
-  // ------------------
+const Energy = ({ id, mock }) => {
 
-  // API DATA
   const [data, setData] = useState(null);
-
+  
   useEffect(() => {
+    // ----- MOCK DATA -----
+    if(mock === true) {
+      // MOCKED DATA --------
+      const userMainData = USER_MAIN_DATA.find((userData)=> userData.id === id);
+      const userData = new UserMainDataModel(userMainData);
+      setData(userData.keyData);
+    }
+
+    // ----- API DATA -----
+    if(mock === false) {
     getUserMainData(id)
       .then((response) => {
         const userData = new UserMainDataModel(response.data)
         setData(userData.keyData);
       });
-  }, [id]);
+    }
+  }, [id, mock]);
 
   return (
 
