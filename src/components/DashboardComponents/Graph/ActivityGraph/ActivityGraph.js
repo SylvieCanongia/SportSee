@@ -1,28 +1,31 @@
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-// import { USER_ACTIVITY } from "../../../../mocks/mock-data";
+import { USER_ACTIVITY } from "../../../../mocks/mock-data";
 import {getUserActivity} from '../../../../service/user-http.service';
 import { UserActivityModel } from "./../../../../service/models/UserActivityModel";
 import "./activityGraph.scss";
 
-const ActivityGraph = ({ id }) => {
-  // MOCKED DATA --------
-  // const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
-  // const userData = new UserActivityModel(userActivityData);
-  // const data = userData.sessions;
-  // ------------------
-
-  // API DATA
+const ActivityGraph = ({ id, mock }) => {
+   
   const [data, setData] = useState(null);
 
   useEffect(() => {
-   
+    // ----- MOCK DATA -----
+    if(mock === true) {
+    const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
+    const userData = new UserActivityModel(userActivityData);
+    setData(userData.sessions);
+    }
+
+    // API DATA
+    if(mock === false) {
     getUserActivity(id)
       .then((response) => {
         const userData = new UserActivityModel(response.data);
         setData(userData.sessions);
       });
-  }, [id]);
+    }
+  }, [id, mock]);
 
   return (
     <div className="activityGraph">

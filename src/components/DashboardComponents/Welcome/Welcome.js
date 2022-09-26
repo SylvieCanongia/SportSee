@@ -12,7 +12,6 @@ const Welcome = ({ id, mock }) => {
     // ----- MOCK DATA -----
     if(mock === true) {
       const userData = USER_MAIN_DATA.find((userData) => userData.id === id);
-  
       const user = new UserMainDataModel(userData);
       return setData(user.userInfos);
     }
