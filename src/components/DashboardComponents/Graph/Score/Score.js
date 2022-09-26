@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { RadialBarChart, RadialBar, Tooltip, ResponsiveContainer } from 'recharts';
-// import { USER_MAIN_DATA } from '../../../../mocks/mock-data';
+import { USER_MAIN_DATA } from '../../../../mocks/mock-data';
 import { getUserMainData } from '../../../../service/user-http.service';
 import { UserMainDataModel } from '../../../../service/models/UserMainDataModel';
 import './score.scss';
 
-const Score = ({id}) => {
-  // MOCKED DATA --------
-  // const userMainData = USER_MAIN_DATA.find((userData) => userData.id === id);
-  // const userData = new UserMainDataModel(userMainData);
-  
-  // Creates the array Recharts uses to get the data.
-  // const data = [userData];
-  // const scoreInPercentage = data[0].todayScore * 100;
-  // const scoreInDegrees = data[0].todayScore * 360;
-  // ------------------
+const Score = ({ id, mock }) => {
 
-  // API DATA
   const [data, setData] = useState(null);
 
   useEffect(() => {
-  
-  getUserMainData(id)
-      .then((response) => {
-        const userData = new UserMainDataModel(response.data);
-        // Put data into array because format required by Recharts
-        setData([userData]);
+
+    // ----- MOCK DATA -----
+    if(mock === true) {
+      const userMainData = USER_MAIN_DATA.find((userData) => userData.id === id);
+      const userData = new UserMainDataModel(userMainData);
+      // Creates the array Recharts uses to get the data.
+      setData([userData]);
+    }
+    
+    // ----- API DATA -----
+    if(mock === false) {
+      getUserMainData(id)
+        .then((response) => {
+          const userData = new UserMainDataModel(response.data);
+          setData([userData]);
       });
-  }, [id]);
+    }
+  }, [id, mock]);
 
   let scoreInPercentage;
   let scoreInDegrees;
