@@ -19,6 +19,7 @@ const AverageSessionGraph = ({ id, mock }) => {
       setData([userData]);
     }
 
+    // ----- API DATA -----
     if(mock === false) {
     getUserAverageSession(id)
       .then((response) => {

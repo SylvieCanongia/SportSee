@@ -1,29 +1,32 @@
 import { useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-// import { USER_PERFORMANCE } from '../../../../mocks/mock-data';
+import { USER_PERFORMANCE } from '../../../../mocks/mock-data';
 import { getUserPerformance } from '../../../../service/user-http.service';
 import { UserPerformanceModel } from '../../../../service/models/UserPerformanceModel';
 import './performanceGraph.scss';
 
-const PerformanceGrapĥ = ({ id }) => {
-  // MOCKED DATA --------
-  // const userPerformanceData = USER_PERFORMANCE.find((userData) => userData.userId === id);
-  // const userData = new UserPerformanceModel(userPerformanceData);
-  // the property data is an array so we can use it as is into Recharts graph
-  // const data = userData.data;
-  // ------------------
+const PerformanceGrapĥ = ({ id, mock }) => {
 
   const [data, setData] = useState(null);
 
   useEffect(() => {
-   
+    // ----- MOCK DATA -----
+    if(mock === true) {
+      const userPerformanceData = USER_PERFORMANCE.find((userData) => userData.userId === id);
+      const userData = new UserPerformanceModel(userPerformanceData);
+      // the property data is an array so we can use it as is into Recharts graph
+      setData(userData.data);
+    }
+  
+    // ----- API DATA -----
+    if(mock === false) {
     getUserPerformance(id)
       .then((response) => {
         const userData = new UserPerformanceModel(response.data);
-        // the property data is an array so we can use it as is into Recharts graph
         setData(userData.data);
       });
-  }, [id]);
+    }
+  }, [id, mock]);
 
   return (
     <div className='performanceGraph'>
