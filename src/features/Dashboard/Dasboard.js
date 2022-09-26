@@ -10,24 +10,24 @@ import Energy from "../../components/DashboardComponents/Energy/Energy";
 
 import "./Dashboard.scss";
 
-const Dashboard = ({ id }) => {
+const Dashboard = ({ id, mock }) => {
   return (
     <>
     { (id === 12 || id === 18) &&
     <div>
       <section className="dashboard">
-        <Welcome id={ id }/>
+        <Welcome id={ id } mock={ mock }/>
         <article className="dashboard__graphsAndEnergy__container">
           <article className="dashboard__graphs">
-            <ActivityGraph id={ id }/>
+            <ActivityGraph id={ id } mock={ mock } />
             <div className="dashboard__graphs__row2">
-              <AverageSessionGraph id={ id }/>
-              <PerformanceGraph id={ id }/>
-              <Score id={ id }/>
+              <AverageSessionGraph id={ id } mock={ mock } />
+              <PerformanceGraph id={ id } mock={ mock } />
+              <Score id={ id } mock={ mock } />
             </div>
           </article>
           <article className="dashboard__energyConsumed">
-            <Energy id={ id } />
+            <Energy id={ id } mock={ mock } />
           </article>
         </article>
       </section>
