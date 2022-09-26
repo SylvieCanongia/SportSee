@@ -1,30 +1,32 @@
 import { useEffect, useState } from 'react';
 import { AreaChart, Area, Tooltip, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Legend, Line } from 'recharts';
-// import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
+import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
 import { getUserAverageSession } from '../../../../service/user-http.service';
 import { UserAverageSessionsModel } from '../../../../service/models/UserAverageSessionsModel';
 
 import './averageSessionGraph.scss';
 
-const AverageSessionGraph = ({id}) => {
-  // MOCKED DATA --------
-  // const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
-  // const userData = new UserAverageSessionsModel(userAverageSessionData);
-  // Creates the array Recharts uses to get the data.
-  // const data = [userData];
-  // ------------------
+const AverageSessionGraph = ({ id, mock }) => {
 
-  // API DATA
   const [data, setData] = useState(null);
-
+  
   useEffect(() => {
-   
+    // ----- MOCK DATA -----
+    if(mock === true) {
+      const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
+      const userData = new UserAverageSessionsModel(userAverageSessionData);
+      // Creates the array Recharts uses to get the data.
+      setData([userData]);
+    }
+
+    if(mock === false) {
     getUserAverageSession(id)
       .then((response) => {
         const userData = new UserAverageSessionsModel(response.data);
         setData([userData]);
       });
-  }, [id]);
+    }
+  }, [id, mock]);
 
   return (
     <div className='averageSessionGraph'>

@@ -18,13 +18,12 @@ const Welcome = ({ id, mock }) => {
 
     // ----- API DATA -----
     if(mock === false) {
-     
-     getUserMainData(id)
-       .then((response) => {
-         const userData = new UserMainDataModel(response.data)
-         return setData(userData.userInfos);
-       });
-     }
+      getUserMainData(id)
+        .then((response) => {
+          const userData = new UserMainDataModel(response.data)
+          return setData(userData.userInfos);
+        });
+      }
    }, [id, mock]);
     
   return (
