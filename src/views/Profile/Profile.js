@@ -14,9 +14,7 @@ const Profile = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    console.log(id)
     if(id !== "12" && id !== "18") {
-      console.log(id)
       navigate('/Error', { replace: true });
     }}
   );

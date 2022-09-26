@@ -11,8 +11,9 @@ import Energy from "../../components/DashboardComponents/Energy/Energy";
 import "./Dashboard.scss";
 
 const Dashboard = ({ id }) => {
-  console.log(id)
   return (
+    <>
+    { (id === 12 || id === 18) &&
     <div>
       <section className="dashboard">
         <Welcome id={ id }/>
@@ -31,6 +32,8 @@ const Dashboard = ({ id }) => {
         </article>
       </section>
     </div>
+    }
+    </>
   );
 };
 
