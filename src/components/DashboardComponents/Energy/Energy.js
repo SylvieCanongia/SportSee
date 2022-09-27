@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from "prop-types";
 import { USER_MAIN_DATA } from '../../../mocks/mock-data';
 import { getUserMainData } from '../../../service/user-http.service';
 import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
@@ -67,5 +68,10 @@ const Energy = ({ id, mock }) => {
     </div>
   );
 };
+
+Energy.propTypes = {
+      id: PropTypes.number.isRequired,
+      mock: PropTypes.bool.isRequired,
+}
 
 export default Energy;

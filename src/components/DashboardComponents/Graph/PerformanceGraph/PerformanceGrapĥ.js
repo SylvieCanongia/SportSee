@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from "prop-types";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import { USER_PERFORMANCE } from '../../../../mocks/mock-data';
 import { getUserPerformance } from '../../../../service/user-http.service';
@@ -47,5 +48,10 @@ const PerformanceGrapĥ = ({ id, mock }) => {
     </div>
   );
 };
+
+PerformanceGrapĥ.propTypes = {
+  id: PropTypes.number.isRequired,
+  mock: PropTypes.bool.isRequired,
+}
 
 export default PerformanceGrapĥ;

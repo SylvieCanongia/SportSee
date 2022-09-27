@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from "prop-types";
 import { RadialBarChart, RadialBar, Tooltip, ResponsiveContainer } from 'recharts';
 import { USER_MAIN_DATA } from '../../../../mocks/mock-data';
 import { getUserMainData } from '../../../../service/user-http.service';
@@ -70,5 +71,10 @@ const Score = ({ id, mock }) => {
     </div>
   );
 };
+
+Score.propTypes = {
+  id: PropTypes.number.isRequired,
+  mock: PropTypes.bool.isRequired,
+}
 
 export default Score;

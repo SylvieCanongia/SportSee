@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from "prop-types";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { USER_ACTIVITY } from "../../../../mocks/mock-data";
 import {getUserActivity} from '../../../../service/user-http.service';
@@ -55,5 +56,10 @@ const ActivityGraph = ({ id, mock }) => {
     </div>
   );
 };
+
+ActivityGraph.propTypes = {
+  id: PropTypes.number.isRequired,
+  mock: PropTypes.bool.isRequired,
+}
 
 export default ActivityGraph;

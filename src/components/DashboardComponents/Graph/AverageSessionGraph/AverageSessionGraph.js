@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { AreaChart, Area, Tooltip, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Legend, Line } from 'recharts';
+import PropTypes from "prop-types";
+import { AreaChart, Area, Tooltip, ResponsiveContainer, CartesianGrid, XAxis } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
 import { getUserAverageSession } from '../../../../service/user-http.service';
 import { UserAverageSessionsModel } from '../../../../service/models/UserAverageSessionsModel';
@@ -53,5 +54,10 @@ const AverageSessionGraph = ({ id, mock }) => {
     </div>
   );
 };
+
+AverageSessionGraph.propTypes = {
+  id: PropTypes.number.isRequired,
+  mock: PropTypes.bool.isRequired,
+}
 
 export default AverageSessionGraph;

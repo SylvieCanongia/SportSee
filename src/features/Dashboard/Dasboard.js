@@ -37,4 +37,9 @@ const Dashboard = ({ id, mock }) => {
   );
 };
 
+Dashboard.propTypes = {
+  id: PropTypes.number.isRequired,
+  mock: PropTypes.bool.isRequired,
+}
+
 export default Dashboard;
