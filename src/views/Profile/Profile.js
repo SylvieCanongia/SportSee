@@ -8,8 +8,8 @@ import './profile.scss';
 const Profile = ({ mock }) => {
   // Get the userId param from the URL.
   const { id } = useParams();
-  console.log( id )
-  console.log(mock)
+  // console.log( id )
+  // console.log(mock)
   // console.log(typeof id)
   
   let navigate = useNavigate();

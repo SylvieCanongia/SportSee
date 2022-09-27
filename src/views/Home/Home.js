@@ -8,19 +8,21 @@ const Home = () => {
   
   return (
     <div className="home">
-    <div>Cliquez sur les boutons</div>
+    <h2>Cliquez sur les boutons</h2>
       <div>
+      <h3>Données mockées</h3>
       {/* Route for mocked data */}
         {userData.map((user) => (
           <Link key={`user-${user.id}`} to={`/user/mocked/${user.id}`} >
-            <button className="homeButton mock">Utilisateur {user.id}, données mockées</button>
+            <button className="homeButton mock">Utilisateur {user.id}</button>
           </Link>
         ))}
       </div>
       <div>
+      <h3>Données API</h3>
         {userData.map((user) => (
           <Link key={`user-${user.id}`} to={`/user/${user.id}`} >
-            <button className="homeButton api">Utilisateur {user.id}, données API</button>
+            <button className="homeButton api">Utilisateur {user.id}</button>
           </Link>
         ))}
       </div>

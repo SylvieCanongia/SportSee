@@ -4,9 +4,18 @@
   align-items: center;
   width: 100%;
 
-  &>div:first-child {
-    margin-block-start: 30px;
+  &>h2 {
+    margin-block: 50px;
     font-weight: bold;
+    font-size: 1.3rem;
+    color: hsl(0, 100%, 50%);
+  }
+
+  & h3 {
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-block-start: 16px;
   }
 
   &Button {
@@ -14,6 +23,11 @@
     padding: 15px 25px;
     margin: 20px;
     border-radius: 10px;
+    width: 300px;
+    height: 60px;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
   }
 
   .mock {
