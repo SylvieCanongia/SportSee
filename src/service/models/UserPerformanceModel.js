@@ -1,6 +1,19 @@
 import PropTypes from 'prop-types';
 
+
+/**
+ * @class
+ * @classdesc Creates a model of the data of the performance of a user
+ */
 export class UserPerformanceModel {
+/**
+ * Represents the user performance.
+ * @constructor
+ * @param { Object } performance
+ * @param { Integer } performance.userId - The id of the user.
+ * @param { {1: 'cardio', 2: 'energy', 3: 'endurance', 4: 'strength', 5: 'speed', 6: 'intensity'} } performance.kind - The list of kind of performance.
+ * @param { Array.<{ value: Integer, kind: Integer }> } performance.data[]
+ */
   constructor(performance) {
     this.userId = performance.userId;
     // kind is the type of activity :

@@ -1,6 +1,15 @@
 import PropTypes from "prop-types";
 
 export class UserMainDataModel {
+/**
+ * Represents the user main data.
+ * @constructor
+ * @param { Object } userMainData
+ * @param { Integer } userMainData.id - The id of the user.
+ * @param { {firstName: String, lastName: String, age: Integer} } userMainData.userInfos - The firstName, lastName and age of the user.
+ * @param {Number} userMainData.todayScore - The score of the day of the user (can be todayScore or score).
+ * @param { {calorieCount: Integer, proteinCount: Integer, carbohydrateCount: Integer, lipidCount: Integer} } userMainData.keyData - The energy consumed by the user (calorieCount, proteinCount, carbohydrateCount, lipidCount).
+ */
   constructor(userMainData) {
     this.id = userMainData.id;
     this.userInfos = {

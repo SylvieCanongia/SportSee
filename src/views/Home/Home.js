@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { USER_MAIN_DATA } from '../../mocks/mock-data';
+// import { USER_MAIN_DATA } from '../../mocks/mock-data';
 
 import './home.scss';
 
 const Home = () => {
-  const userData = USER_MAIN_DATA;
+  // const userData = USER_MAIN_DATA;
+  const userData = [ { id: 12 }, { id:18 } ]
   
   return (
     <div className="home">

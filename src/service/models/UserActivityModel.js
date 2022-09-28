@@ -1,7 +1,18 @@
 import PropTypes from 'prop-types';
 
+/**
+ * @class
+ * @classdesc Creates a model of the activity data of a user
+ */
 export class UserActivityModel {
 
+/**
+ * Represents the user activity.
+ * @constructor
+ * @param { Object } activity
+ * @param { Integer } activity.userId - The id of the user.
+ * @param { Array.<[{day: String, kilogram: Integer, calories: Integer}]> } activity.sessions - The day of the session, weight of the user and calories consumed.
+ */
   constructor(activity) {
     this.userId = activity.userId;
     this.sessions = activity.sessions.map((session) => (
