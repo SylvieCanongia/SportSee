@@ -6,6 +6,14 @@ import { getUserPerformance } from '../../../../service/user-http.service';
 import { UserPerformanceModel } from '../../../../service/models/UserPerformanceModel';
 import './performanceGraph.scss';
 
+/**
+ * Component - Graph displaying the performance data of a user
+ * @module PerformanceGraph
+ * @param { Object } object
+ * @param { Integer } object.id - The id of the user
+ * @param { Boolean } object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } - 
+ */
 const PerformanceGrapĥ = ({ id, mock }) => {
 
   const [data, setData] = useState(null);

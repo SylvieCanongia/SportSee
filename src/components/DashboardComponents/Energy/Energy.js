@@ -11,6 +11,13 @@ import LipidIcon from './fat-icon.svg';
 
 import './energy.scss';
 
+/**
+ * Cards displaying the consumed energy (calories, protéines, glucides, lipides)
+ * @param { Object } object
+ * @param { Integer } object.id - The id of the user
+ * @param { Boolean } object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } - 
+ */
 const Energy = ({ id, mock }) => {
 
   const [data, setData] = useState(null);

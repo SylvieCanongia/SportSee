@@ -5,6 +5,14 @@ import {getUserMainData} from '../../../service/user-http.service';
 import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
 import './welcome.scss';
 
+/**
+ * Component displaying the welcome message for a user
+ * @module Welcome
+ * @param { Object } object
+ * @param { Integer } object.id - The id of the user
+ * @param { Boolean } object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } - 
+ */
 const Welcome = ({ id, mock }) => {
   
    const [data, setData] = useState(null);

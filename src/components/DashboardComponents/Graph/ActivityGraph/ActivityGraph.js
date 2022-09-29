@@ -6,6 +6,14 @@ import {getUserActivity} from '../../../../service/user-http.service';
 import { UserActivityModel } from "./../../../../service/models/UserActivityModel";
 import "./activityGraph.scss";
 
+/**
+ * Component - Graph displaying the activity data of a user
+ * @module ActivityGraph
+ * @param { Object } object
+ * @param { Integer } object.id - The id of the user
+ * @param { Boolean } object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } - 
+ */
 const ActivityGraph = ({ id, mock }) => {
    
   const [data, setData] = useState(null);

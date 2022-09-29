@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 
 import './home.scss';
 
+/**
+ * Component - View Home displaying the Home page
+ * @module Home
+ * @returns { HTMLElement } HTMLElement
+ */
 const Home = () => {
   // const userData = USER_MAIN_DATA;
   const userData = [ { id: 12 }, { id:18 } ]

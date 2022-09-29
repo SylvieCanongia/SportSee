@@ -6,6 +6,15 @@ import { getUserMainData } from '../../../../service/user-http.service';
 import { UserMainDataModel } from '../../../../service/models/UserMainDataModel';
 import './score.scss';
 
+
+/**
+ * Graph displaying the score data of a user
+ * @module Score
+ * @param { Object } object
+ * @param { Integer } object.id - The id of the user
+ * @param { Boolean } object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } - 
+ */
 const Score = ({ id, mock }) => {
 
   const [data, setData] = useState(null);

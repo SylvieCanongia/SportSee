@@ -6,6 +6,13 @@ import { useParams } from "react-router-dom";
 import Dashboard from "./../../features/Dashboard/Dasboard";
 import './profile.scss';
 
+/**
+ * Component - View Profile displaying the Profile page
+ * @module Profile
+ * @param { Object } object
+ * @param { Boolean } object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } - 
+ */
 const Profile = ({ mock }) => {
   // Get the userId param from the URL.
   const { id } = useParams();

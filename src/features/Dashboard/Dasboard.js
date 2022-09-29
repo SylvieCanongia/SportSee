@@ -10,6 +10,14 @@ import Energy from "../../components/DashboardComponents/Energy/Energy";
 
 import "./Dashboard.scss";
 
+/**
+ * Feature Dashboard - Displays all the user data
+ * @module Dashboard
+ * @param { Object } Object
+ * @param { Integer } Object.id - The id of the user
+ * @param { Boolean } Object.mock - True if is mocked data and false if is API data
+ * @returns { HTMLElement } HTMLElement
+ */
 const Dashboard = ({ id, mock }) => {
   return (
     <>
