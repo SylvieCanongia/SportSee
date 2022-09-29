@@ -12,6 +12,9 @@
   // gap: 100px;
   align-items: center;
   
+  @media screen and (max-width: 1200px) {
+    justify-content: flex-start;
+  }
 
     &__menu {
       // menu items vertically positionned
@@ -23,6 +26,10 @@
       
       background-color: vars.$col-nav-bg-black;
       padding-inline-start: 0;
+
+      @media screen and (max-width: 1200px) {
+        margin-block-start: 220px;
+      }
 
       &>li {
         width: 64px;
