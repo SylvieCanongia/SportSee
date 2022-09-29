@@ -22,7 +22,7 @@ const Welcome = ({ id, mock }) => {
     if(mock === true) {
       const userData = USER_MAIN_DATA.find((userData) => userData.id === id);
       const user = new UserMainDataModel(userData);
-      return setData(user.userInfos);
+      setData(user.userInfos);
     }
 
     // ----- API DATA -----
@@ -30,7 +30,7 @@ const Welcome = ({ id, mock }) => {
       getUserMainData(id)
         .then((response) => {
           const userData = new UserMainDataModel(response.data)
-          return setData(userData.userInfos);
+          setData(userData.userInfos);
         });
       }
    }, [id, mock]);

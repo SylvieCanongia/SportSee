@@ -6,19 +6,18 @@ import { axiosInstance } from "../http-common";
  * (first name, last name and age), the current day's score (todayScore)
  * and key data (calorie, macronutrient, etc.).
  * @param { Integer } userId 
- * @returns { promise }
+ * @returns { promise } Promise
  */
-export const getUserMainData = (userId) => {
-  return new Promise((onSuccess, onFail) => {
-     axiosInstance.get(`/user/${userId}`)
-      .then((response, error) => {
-        if(!response || error) {
-          return onFail(`Erreur : ${error}`);
-        }
-        onSuccess(response.data);
-      });
-  });
-};
+export async function getUserMainData(userId) {
+	try {
+    const response = await axiosInstance.get(`/user/${userId}`);
+		const data = response.data;
+    return data;
+	}
+	catch (error) {
+		console.log(error);
+	}
+}
 
 /**
  * Send custom request using Axios instance.
@@ -26,17 +25,16 @@ export const getUserMainData = (userId) => {
  * @param { Integer } userId 
  * @returns { promise }
  */
-export const getUserActivity = (userId) => {
-  return new Promise((onSuccess, onFail) => {
-    axiosInstance.get(`/user/${userId}/activity`)
-      .then((response, error) => {
-        if(!response || error) {
-          return onFail(`Erreur : ${error}`);
-        }
-        onSuccess(response.data);
-      });
-  });
-};
+ export async function getUserActivity (userId) {
+    try {
+      const response = await axiosInstance.get(`/user/${userId}/activity`);
+      const data = response.data;
+      return data;
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
 
 /**
  * Send custom request using Axios instance.
@@ -44,16 +42,15 @@ export const getUserActivity = (userId) => {
  * @param { Integer } userId 
  * @returns { promise }
  */
-export const getUserAverageSession = (userId) => {
-  return new Promise((onSuccess, onFail) => {
-    axiosInstance.get(`/user/${userId}/average-sessions`)
-      .then((response, error) => {
-        if(!response || error) {
-          return onFail(`Erreur : ${error}`);
-        }
-        onSuccess(response.data);
-      });
-  });
+export async function getUserAverageSession (userId) {
+  try {
+    const response = await axiosInstance.get(`/user/${userId}/average-sessions`);
+    const data = response.data;
+    return data;
+  }
+  catch (error) {
+    console.log(error);
+  }
 };
 
 /**
@@ -62,8 +59,8 @@ export const getUserAverageSession = (userId) => {
  * @param { Number } userId 
  * @returns { promise }
  */
-export const getUserPerformance = (userId) => {
-  return new Promise((onSuccess, onFail) => {
+export async function getUserPerformance (userId) {
+  return await new Promise((onSuccess, onFail) => {
     axiosInstance.get(`/user/${userId}/performance`)
       .then((response, error) => {
         if(!response || error) {
