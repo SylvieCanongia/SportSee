@@ -10,21 +10,21 @@ This repo contains all the source code to run the sports analytics SportSee fron
 
 ### 2. Launching the project
 
-- Fork and run first the Sportsee dashboard on [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard), on port [http://localhost:3000](http://localhost:3000)
+- Fork, clone on your computer and run first the Sportsee front-end dashboard. You can find the repo here [https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard). The dashboard will run on port [http://localhost:3000](http://localhost:3000)
 - Fork this repository
 - Clone it on your computer.
 - The `yarn` command will allow you to install the dependencies.
 - The `yarn start` command will allow you to run the Sportsee app front-end.
 
-**Warning, currently only two users have been mocked from ``mocks/mock-data.js`` in this front-end repository and then from the front-end Dashboard. They have userId 12 and 18 respectively.**
+**Warning, currently only two users have been mocked from the file ``mocks/mock-data.js`` and then from the front-end Dashboard. They have userId 12 and 18 respectively.**
 
 ### 3. Available Scripts
 
-You can run Sportsee front-end in this project with :
+You can run Sportsee front-end with :
 
 ### `yarn start`
 
-Runs the app in the development mode. \
+Runs the app in the development mode.
 
 Open the default port chosen by React to view it in your browser ( the default port will be 3001 or other, because port 3000 is already used by the dashboard) .
 
