@@ -26,7 +26,7 @@ You can run Sportsee front-end with :
 
 Runs the app in the development mode.
 
-Open the default port chosen by React to view it in your browser ( the default port will be 3001 or other, because port 3000 is already used by the dashboard) .
+The Sportsee front-end will run on port [http://localhost:3001](http://localhost:3001)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.

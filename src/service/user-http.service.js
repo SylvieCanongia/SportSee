@@ -10,7 +10,7 @@ import { axiosInstance } from "../http-common";
  */
 export async function getUserMainData(userId) {
 	try {
-    const response = await axiosInstance.get(`/user/${userId}`);
+    const response = await axiosInstance.get(`user/${userId}`);
 		const data = response.data;
     return data;
 	}
@@ -27,7 +27,7 @@ export async function getUserMainData(userId) {
  */
  export async function getUserActivity (userId) {
     try {
-      const response = await axiosInstance.get(`/user/${userId}/activity`);
+      const response = await axiosInstance.get(`user/${userId}/activity`);
       const data = response.data;
       return data;
     }
@@ -44,7 +44,7 @@ export async function getUserMainData(userId) {
  */
 export async function getUserAverageSession (userId) {
   try {
-    const response = await axiosInstance.get(`/user/${userId}/average-sessions`);
+    const response = await axiosInstance.get(`user/${userId}/average-sessions`);
     const data = response.data;
     return data;
   }
@@ -61,7 +61,7 @@ export async function getUserAverageSession (userId) {
  */
 export async function getUserPerformance (userId) {
   return await new Promise((onSuccess, onFail) => {
-    axiosInstance.get(`/user/${userId}/performance`)
+    axiosInstance.get(`user/${userId}/performance`)
       .then((response, error) => {
         if(!response || error) {
           return onFail(`Erreur : ${error}`);
