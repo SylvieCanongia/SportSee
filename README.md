@@ -15,7 +15,7 @@ This repo contains all the source code to run the sports analytics SportSee fron
 - Clone it on your computer.
 - The `yarn` command will allow you to install the dependencies.
 - The `yarn start` command will allow you to run the Sportsee app front-end.
-- In a new terminal, launch the fake server (from json server) with mocked data by running the command `yarn start-mock`. You can see the data on port [http://localhost:3500](http://localhost:3500) as :
+- In a new terminal, the `yarn start-mock` command will allow you to launch the fake server (from json server) with mocked data. You can see the data on port [http://localhost:3500](http://localhost:3500) as :
   - The USER MAIN DATA :[http://localhost:3500/USER_MAIN_DATA](http://localhost:3500/USER_MAIN_DATA)
   - The USER ACTIVITY data : [http://localhost:3500/USER_ACTIVITY](http://localhost:3500/USER_ACTIVITY)
   - The USER AVERAGE SESSIONS data : [http://localhost:3500/USER_AVERAGE_SESSIONS](http://localhost:3500/USER_AVERAGE_SESSIONS)
