@@ -21,7 +21,8 @@
     "start-mock": "npx json-server -p 3500 -w data/db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "jsdoc": "./node_modules/.bin/jsdoc src -r -d documentation"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "eslint": "^8.22.0",
-    "eslint-plugin-react": "^7.30.1"
+    "eslint-plugin-react": "^7.30.1",
+    "jsdoc": "~3.6.11"
   }
 }
