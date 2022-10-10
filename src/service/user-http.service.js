@@ -5,6 +5,7 @@ import { UserAverageSessionsModel } from "./models/UserAverageSessionsModel";
 import { UserPerformanceModel } from "./models/UserPerformanceModel";
 
 let response = null;
+
 /**
  * Send custom request using Axios instance.
  * Retrieves information from a user. Includes the user id, user information
