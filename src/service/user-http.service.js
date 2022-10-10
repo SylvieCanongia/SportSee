@@ -39,7 +39,7 @@ export async function getUserMainData(userId) {
 export async function getUserActivity(userId) {
   try {
     if (mock === true) {
-      const activityData = await axiosInstance.get(`USER_ACTIVITY`);
+      const activityData = await axiosInstance.get('USER_ACTIVITY');
       response = activityData.data.find((userData) => userData.userId === userId);
     } else {
       const apiData = await axiosInstance.get(`user/${userId}/activity`);
@@ -62,7 +62,7 @@ export async function getUserActivity(userId) {
 export async function getUserAverageSession(userId) {
   try {
     if (mock === true) {
-      const averageSessionsData = await axiosInstance.get(`USER_AVERAGE_SESSIONS`);
+      const averageSessionsData = await axiosInstance.get('USER_AVERAGE_SESSIONS');
       response = averageSessionsData.data.find((userData) => userData.userId === userId);
     } else {
       const apiData = await axiosInstance.get(`user/${userId}/average-sessions`);
@@ -86,7 +86,7 @@ export async function getUserAverageSession(userId) {
 export async function getUserPerformance(userId) {
   try {
     if (mock === true) {
-      const userPerformanceData = await axiosInstance.get("USER_PERFORMANCE");
+      const userPerformanceData = await axiosInstance.get('USER_PERFORMANCE');
       response = userPerformanceData.data.find((userData) => userData.userId === userId);
     } else {
       const apiData = await axiosInstance.get(`user/${userId}/performance`);

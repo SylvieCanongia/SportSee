@@ -1,8 +1,13 @@
 import axios from "axios";
 
-// Set on API data by default. Set to 'true' if you want to get mocked data;
-// export const mock = false; // API data
-export const mock = true; // Mocked data
+// Gets data from API by default.
+//Uncomment 'true' and comment 'false' if you want to get mocked data from json server;
+
+// API DATA
+export const mock = false;
+
+// MOCKED DATA
+// export const mock = true;
 
 let API_URL = null;
 
