@@ -11,7 +11,7 @@ export class UserActivityModel {
  * @constructor
  * @param { Object } activity
  * @param { Integer } activity.userId - The id of the user.
- * @param { Array.<[{day: String, kilogram: Integer, calories: Integer}]> } activity.sessions - The day of the session, weight of the user and calories consumed.
+ * @param { Array.<{day: String, kilogram: Integer, calories: Integer}> } activity.sessions - The day of the session, weight of the user and calories consumed.
  */
   constructor(activity) {
     this.userId = activity.userId;
