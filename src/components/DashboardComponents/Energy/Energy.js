@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
-import { USER_MAIN_DATA } from '../../../mocks/mock-data';
+// import { USER_MAIN_DATA } from '../../../mocks/mock-data';
 import { getUserMainData } from '../../../service/user-http.service';
 import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
 
@@ -24,12 +24,12 @@ const Energy = ({ id, mock }) => {
   
   useEffect(() => {
     // ----- MOCK DATA -----
-    if(mock === true) {
-      // MOCKED DATA --------
-      const userMainData = USER_MAIN_DATA.find((userData)=> userData.id === id);
-      const userData = new UserMainDataModel(userMainData);
-      setData(userData.keyData);
-    }
+    // if(mock === true) {
+    //   // MOCKED DATA --------
+    //   const userMainData = USER_MAIN_DATA.find((userData)=> userData.id === id);
+    //   const userData = new UserMainDataModel(userMainData);
+    //   setData(userData.keyData);
+    // }
 
     // ----- API DATA -----
     if(mock === false) {

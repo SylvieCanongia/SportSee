@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { RadialBarChart, RadialBar, Tooltip, ResponsiveContainer } from 'recharts';
-import { USER_MAIN_DATA } from '../../../../mocks/mock-data';
+// import { USER_MAIN_DATA } from '../../../../mocks/mock-data';
 import { getUserMainData } from '../../../../service/user-http.service';
 import { UserMainDataModel } from '../../../../service/models/UserMainDataModel';
 import './score.scss';
@@ -22,12 +22,12 @@ const Score = ({ id, mock }) => {
   useEffect(() => {
 
     // ----- MOCK DATA -----
-    if(mock === true) {
-      const userMainData = USER_MAIN_DATA.find((userData) => userData.id === id);
-      const userData = new UserMainDataModel(userMainData);
-      // Creates the array Recharts uses to get the data.
-      setData([userData]);
-    }
+    // if(mock === true) {
+    //   const userMainData = USER_MAIN_DATA.find((userData) => userData.id === id);
+    //   const userData = new UserMainDataModel(userMainData);
+    //   // Creates the array Recharts uses to get the data.
+    //   setData([userData]);
+    // }
     
     // ----- API DATA -----
     if(mock === false) {

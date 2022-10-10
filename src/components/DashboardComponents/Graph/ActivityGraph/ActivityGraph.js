@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { USER_ACTIVITY } from "../../../../mocks/mock-data";
 import {getUserActivity} from '../../../../service/user-http.service';
-import { UserActivityModel } from "./../../../../service/models/UserActivityModel";
 import "./activityGraph.scss";
 
 /**
@@ -14,27 +12,16 @@ import "./activityGraph.scss";
  * @param { Boolean } object.mock - True if is mocked data and false if is API data
  * @returns { HTMLElement } - 
  */
-const ActivityGraph = ({ id, mock }) => {
+const ActivityGraph = ({ id }) => {
    
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // ----- MOCK DATA -----
-    if(mock === true) {
-    const userActivityData = USER_ACTIVITY.find((userData) => userData.userId === id);
-    const userData = new UserActivityModel(userActivityData);
-    setData(userData.sessions);
-    }
-
-    // API DATA
-    if(mock === false) {
     getUserActivity(id)
       .then((response) => {
-        const userData = new UserActivityModel(response.data);
-        setData(userData.sessions);
+        setData(response.sessions);
       });
-    }
-  }, [id, mock]);
+    }, [id]);
 
   return (
     <div className="activityGraph">
@@ -67,7 +54,6 @@ const ActivityGraph = ({ id, mock }) => {
 
 ActivityGraph.propTypes = {
   id: PropTypes.number.isRequired,
-  mock: PropTypes.bool.isRequired,
 }
 
 export default ActivityGraph;

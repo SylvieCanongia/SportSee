@@ -1,4 +1,6 @@
-import { axiosInstance } from "../http-common";
+import { axiosInstance, mock } from "./http-common";
+import { UserMainDataModel } from './models/UserMainDataModel';
+import { UserActivityModel } from './models/UserActivityModel';
 
 /**
  * Send custom request using Axios instance.
@@ -9,10 +11,17 @@ import { axiosInstance } from "../http-common";
  * @returns { promise } Promise
  */
 export async function getUserMainData(userId) {
+  let response = null;
 	try {
-    const response = await axiosInstance.get(`user/${userId}`);
+    if (mock === true) {
+      response = await axiosInstance.get(`USER_MAIN_DATA/${userId}`);
+    } else {
+      const apiData = await axiosInstance.get(`user/${userId}`);
+      response = apiData.data;
+    }
 		const data = response.data;
-    return data;
+    const userData = new UserMainDataModel(data);
+    return userData;
 	}
 	catch (error) {
 		console.log(error);
@@ -26,10 +35,20 @@ export async function getUserMainData(userId) {
  * @returns { promise }
  */
  export async function getUserActivity (userId) {
+  let response = null;
     try {
-      const response = await axiosInstance.get(`user/${userId}/activity`);
-      const data = response.data;
-      return data;
+      if (mock === true) {
+        const activityData = await axiosInstance.get(`USER_ACTIVITY`);
+        response = activityData.data.find((userData) => userData.userId === userId);
+        // console.log(response)
+      } else {
+        const apiData = await axiosInstance.get(`user/${userId}/activity`);
+        const responseData = apiData.data
+        response = responseData.data;
+        // console.log(response)
+      }
+      const userData = new UserActivityModel(response);
+      return userData;
     }
     catch (error) {
       console.log(error);

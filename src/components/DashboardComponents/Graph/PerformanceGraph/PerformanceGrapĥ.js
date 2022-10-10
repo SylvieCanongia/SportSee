@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-import { USER_PERFORMANCE } from '../../../../mocks/mock-data';
+// import { USER_PERFORMANCE } from '../../../../mocks/mock-data';
 import { getUserPerformance } from '../../../../service/user-http.service';
 import { UserPerformanceModel } from '../../../../service/models/UserPerformanceModel';
 import './performanceGraph.scss';
@@ -20,12 +20,12 @@ const PerformanceGrapĥ = ({ id, mock }) => {
 
   useEffect(() => {
     // ----- MOCK DATA -----
-    if(mock === true) {
-      const userPerformanceData = USER_PERFORMANCE.find((userData) => userData.userId === id);
-      const userData = new UserPerformanceModel(userPerformanceData);
-      // the property data is an array so we can use it as is into Recharts graph
-      setData(userData.data);
-    }
+    // if(mock === true) {
+    //   const userPerformanceData = USER_PERFORMANCE.find((userData) => userData.userId === id);
+    //   const userData = new UserPerformanceModel(userPerformanceData);
+    //   // the property data is an array so we can use it as is into Recharts graph
+    //   setData(userData.data);
+    // }
   
     // ----- API DATA -----
     if(mock === false) {

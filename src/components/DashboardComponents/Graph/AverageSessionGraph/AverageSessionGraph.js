@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { AreaChart, Area, Tooltip, ResponsiveContainer, CartesianGrid, XAxis } from 'recharts';
-import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
+// import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
 import { getUserAverageSession } from '../../../../service/user-http.service';
 import { UserAverageSessionsModel } from '../../../../service/models/UserAverageSessionsModel';
 
@@ -21,12 +21,12 @@ const AverageSessionGraph = ({ id, mock }) => {
   
   useEffect(() => {
     // ----- MOCK DATA -----
-    if(mock === true) {
-      const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
-      const userData = new UserAverageSessionsModel(userAverageSessionData);
-      // Creates the array Recharts uses to get the data.
-      setData([userData]);
-    }
+    // if(mock === true) {
+    //   const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
+    //   const userData = new UserAverageSessionsModel(userAverageSessionData);
+    //   // Creates the array Recharts uses to get the data.
+    //   setData([userData]);
+    // }
 
     // ----- API DATA -----
     if(mock === false) {

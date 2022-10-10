@@ -12,11 +12,7 @@ const index = () => {
           <Route path="/" element={<Home />} />
           <Route
             path="user/:id"
-            element={<Profile mock={false}/>}
-          />
-          <Route
-            path="user/mocked/:id"
-            element={<Profile mock={true}/>}
+            element={<Profile />}
           />
           <Route path="settings" element={<Settings />} />
           <Route path="community" element={<Community />} />

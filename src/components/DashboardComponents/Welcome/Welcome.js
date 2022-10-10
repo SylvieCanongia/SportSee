@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
-import { USER_MAIN_DATA } from '../../../mocks/mock-data';
 import {getUserMainData} from '../../../service/user-http.service';
-import { UserMainDataModel } from '../../../service/models/UserMainDataModel';
 import './welcome.scss';
 
 /**
@@ -10,30 +8,18 @@ import './welcome.scss';
  * @module Welcome
  * @param { Object } object
  * @param { Integer } object.id - The id of the user
- * @param { Boolean } object.mock - True if is mocked data and false if is API data
  * @returns { HTMLElement } - 
  */
-const Welcome = ({ id, mock }) => {
-  
+const Welcome = ({ id }) => {
+
    const [data, setData] = useState(null);
 
    useEffect(() => {
-    // ----- MOCK DATA -----
-    if(mock === true) {
-      const userData = USER_MAIN_DATA.find((userData) => userData.id === id);
-      const user = new UserMainDataModel(userData);
-      setData(user.userInfos);
-    }
-
-    // ----- API DATA -----
-    if(mock === false) {
       getUserMainData(id)
         .then((response) => {
-          const userData = new UserMainDataModel(response.data)
-          setData(userData.userInfos);
+          setData(response.userInfos);
         });
-      }
-   }, [id, mock]);
+      }, [id]);
     
   return (
     <div className='welcome'>
@@ -46,7 +32,6 @@ const Welcome = ({ id, mock }) => {
 
 Welcome.propTypes = {
   id: PropTypes.number.isRequired,
-  mock: PropTypes.bool.isRequired,
 }
 
 export default Welcome;
