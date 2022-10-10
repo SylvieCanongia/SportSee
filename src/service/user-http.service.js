@@ -2,6 +2,7 @@ import { axiosInstance, mock } from "./http-common";
 import { UserMainDataModel } from './models/UserMainDataModel';
 import { UserActivityModel } from './models/UserActivityModel';
 import { UserAverageSessionsModel } from './models/UserAverageSessionsModel';
+import { UserPerformanceModel } from './models/UserPerformanceModel';
 
 let response = null;
 /**
@@ -45,7 +46,7 @@ export async function getUserMainData(userId) {
         // console.log(response)
       } else {
         const apiData = await axiosInstance.get(`user/${userId}/activity`);
-        const responseData = apiData.data
+        const responseData = apiData.data;
         response = responseData.data;
         // console.log(response)
       }
@@ -67,9 +68,9 @@ export async function getUserAverageSession (userId) {
   try {
     if (mock === true) {
       const averageSessionsData = await axiosInstance.get(`USER_AVERAGE_SESSIONS`);
-        response = averageSessionsData.data.find((userData) => userData.userId === userId);
-        console.log(response);
-    } else {
+      response = averageSessionsData.data.find((userData) => userData.userId === userId);
+      console.log(response);
+  } else {
       const apiData = await axiosInstance.get(`user/${userId}/average-sessions`);
       const responseData = apiData.data;
       response = responseData.data;
@@ -91,13 +92,19 @@ export async function getUserAverageSession (userId) {
  * @returns { promise }
  */
 export async function getUserPerformance (userId) {
-  return await new Promise((onSuccess, onFail) => {
-    axiosInstance.get(`user/${userId}/performance`)
-      .then((response, error) => {
-        if(!response || error) {
-          return onFail(`Erreur : ${error}`);
+  try {
+    if (mock === true) {
+      const userPerformanceData = await axiosInstance.get('USER_PERFORMANCE');
+      response = userPerformanceData.data.find((userData) => userData.userId === userId);
+    } else {
+      const apiData = await axiosInstance.get(`user/${userId}/performance`)
+        const responseData = apiData.data;
+        response = responseData.data;
         }
-        onSuccess(response.data);
-      });
-  });
+        const userData = new UserPerformanceModel(response);
+        return userData;
+    }
+    catch (error) {
+      console.log(error);
+  }
 };

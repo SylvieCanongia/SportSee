@@ -18,7 +18,7 @@ import './energy.scss';
  * @param { Boolean } object.mock - True if is mocked data and false if is API data
  * @returns { HTMLElement } - 
  */
-const Energy = ({ id, mock }) => {
+const Energy = ({ id }) => {
 
   const [data, setData] = useState(null);
   
@@ -32,14 +32,14 @@ const Energy = ({ id, mock }) => {
     // }
 
     // ----- API DATA -----
-    if(mock === false) {
+    // if(mock === false) {
     getUserMainData(id)
       .then((response) => {
         const userData = new UserMainDataModel(response.data)
         setData(userData.keyData);
       });
-    }
-  }, [id, mock]);
+    // }
+  }, [id]);
 
   return (
 
@@ -78,7 +78,6 @@ const Energy = ({ id, mock }) => {
 
 Energy.propTypes = {
       id: PropTypes.number.isRequired,
-      mock: PropTypes.bool.isRequired,
 }
 
 export default Energy;

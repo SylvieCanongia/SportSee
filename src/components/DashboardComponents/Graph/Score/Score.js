@@ -15,7 +15,7 @@ import './score.scss';
  * @param { Boolean } object.mock - True if is mocked data and false if is API data
  * @returns { HTMLElement } - 
  */
-const Score = ({ id, mock }) => {
+const Score = ({ id }) => {
 
   const [data, setData] = useState(null);
 
@@ -30,14 +30,14 @@ const Score = ({ id, mock }) => {
     // }
     
     // ----- API DATA -----
-    if(mock === false) {
-      getUserMainData(id)
-        .then((response) => {
-          const userData = new UserMainDataModel(response.data);
-          setData([userData]);
-      });
-    }
-  }, [id, mock]);
+    // if(mock === false) {
+    //   getUserMainData(id)
+    //     .then((response) => {
+    //       const userData = new UserMainDataModel(response.data);
+    //       setData([userData]);
+    //   });
+    // }
+  }, [id]);
 
   let scoreInPercentage;
   let scoreInDegrees;
@@ -83,7 +83,6 @@ const Score = ({ id, mock }) => {
 
 Score.propTypes = {
   id: PropTypes.number.isRequired,
-  mock: PropTypes.bool.isRequired,
 }
 
 export default Score;
