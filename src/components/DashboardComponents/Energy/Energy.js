@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-// import { USER_MAIN_DATA } from '../../../mocks/mock-data';
 import { getUserMainData } from "../../../service/user-http.service";
-import { UserMainDataModel } from "../../../service/models/UserMainDataModel";
 
 import CaloriesIcon from "./calories-icon.svg";
 import ProteinIcon from "./protein-icon.svg";
@@ -15,28 +13,15 @@ import "./energy.scss";
  * Cards displaying the consumed energy (calories, protéines, glucides, lipides)
  * @param { Object } object
  * @param { Integer } object.id - The id of the user
- * @param { Boolean } object.mock - True if is mocked data and false if is API data
  * @returns { HTMLElement } -
  */
 const Energy = ({ id }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    // ----- MOCK DATA -----
-    // if(mock === true) {
-    //   // MOCKED DATA --------
-    //   const userMainData = USER_MAIN_DATA.find((userData)=> userData.id === id);
-    //   const userData = new UserMainDataModel(userMainData);
-    //   setData(userData.keyData);
-    // }
-
-    // ----- API DATA -----
-    // if(mock === false) {
     getUserMainData(id).then((response) => {
-      const userData = new UserMainDataModel(response.data);
-      setData(userData.keyData);
+      setData(response.keyData);
     });
-    // }
   }, [id]);
 
   return (
