@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import { AreaChart, Area, Tooltip, ResponsiveContainer, CartesianGrid, XAxis } from 'recharts';
-// import { USER_AVERAGE_SESSIONS } from '../../../../mocks/mock-data';
 import { getUserAverageSession } from '../../../../service/user-http.service';
-import { UserAverageSessionsModel } from '../../../../service/models/UserAverageSessionsModel';
 
 import './averageSessionGraph.scss';
 
@@ -12,31 +10,18 @@ import './averageSessionGraph.scss';
  * @module AverageSessionGraph
  * @param { Object } object
  * @param { Integer } object.id - The id of the user
- * @param { Boolean } object.mock - True if is mocked data and false if is API data
  * @returns { HTMLElement } - 
  */
-const AverageSessionGraph = ({ id, mock }) => {
+const AverageSessionGraph = ({ id }) => {
 
   const [data, setData] = useState(null);
   
   useEffect(() => {
-    // ----- MOCK DATA -----
-    // if(mock === true) {
-    //   const userAverageSessionData = USER_AVERAGE_SESSIONS.find((userData) => userData.userId === id);
-    //   const userData = new UserAverageSessionsModel(userAverageSessionData);
-    //   // Creates the array Recharts uses to get the data.
-    //   setData([userData]);
-    // }
-
-    // ----- API DATA -----
-    if(mock === false) {
     getUserAverageSession(id)
       .then((response) => {
-        const userData = new UserAverageSessionsModel(response.data);
-        setData([userData]);
+        setData([response]);
       });
-    }
-  }, [id, mock]);
+  }, [id]);
 
   return (
     <div className='averageSessionGraph'>
@@ -65,7 +50,6 @@ const AverageSessionGraph = ({ id, mock }) => {
 
 AverageSessionGraph.propTypes = {
   id: PropTypes.number.isRequired,
-  mock: PropTypes.bool.isRequired,
 }
 
 export default AverageSessionGraph;

@@ -1,7 +1,9 @@
 import { axiosInstance, mock } from "./http-common";
 import { UserMainDataModel } from './models/UserMainDataModel';
 import { UserActivityModel } from './models/UserActivityModel';
+import { UserAverageSessionsModel } from './models/UserAverageSessionsModel';
 
+let response = null;
 /**
  * Send custom request using Axios instance.
  * Retrieves information from a user. Includes the user id, user information
@@ -11,7 +13,7 @@ import { UserActivityModel } from './models/UserActivityModel';
  * @returns { promise } Promise
  */
 export async function getUserMainData(userId) {
-  let response = null;
+  
 	try {
     if (mock === true) {
       response = await axiosInstance.get(`USER_MAIN_DATA/${userId}`);
@@ -35,7 +37,7 @@ export async function getUserMainData(userId) {
  * @returns { promise }
  */
  export async function getUserActivity (userId) {
-  let response = null;
+  // let response = null;
     try {
       if (mock === true) {
         const activityData = await axiosInstance.get(`USER_ACTIVITY`);
@@ -63,9 +65,19 @@ export async function getUserMainData(userId) {
  */
 export async function getUserAverageSession (userId) {
   try {
-    const response = await axiosInstance.get(`user/${userId}/average-sessions`);
-    const data = response.data;
-    return data;
+    if (mock === true) {
+      const averageSessionsData = await axiosInstance.get(`USER_AVERAGE_SESSIONS`);
+        response = averageSessionsData.data.find((userData) => userData.userId === userId);
+        console.log(response);
+    } else {
+      const apiData = await axiosInstance.get(`user/${userId}/average-sessions`);
+      const responseData = apiData.data;
+      response = responseData.data;
+      console.log(response);
+    }
+    
+    const userData = new UserAverageSessionsModel(response);
+    return userData;
   }
   catch (error) {
     console.log(error);
