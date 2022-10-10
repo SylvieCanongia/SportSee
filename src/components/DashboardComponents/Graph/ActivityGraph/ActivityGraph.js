@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import {getUserActivity} from '../../../../service/user-http.service';
+import { getUserActivity } from "../../../../service/user-http.service";
 import "./activityGraph.scss";
 
 /**
@@ -10,18 +10,16 @@ import "./activityGraph.scss";
  * @param { Object } object
  * @param { Integer } object.id - The id of the user
  * @param { Boolean } object.mock - True if is mocked data and false if is API data
- * @returns { HTMLElement } - 
+ * @returns { HTMLElement } -
  */
 const ActivityGraph = ({ id }) => {
-   
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    getUserActivity(id)
-      .then((response) => {
-        setData(response.sessions);
-      });
-    }, [id]);
+    getUserActivity(id).then((response) => {
+      setData(response.sessions);
+    });
+  }, [id]);
 
   return (
     <div className="activityGraph">
@@ -41,7 +39,7 @@ const ActivityGraph = ({ id }) => {
         >
           <CartesianGrid strokeDasharray="2 2" vertical={false} />
           <XAxis dataKey="day" stroke="hsl(228, 9%, 64%)" tickLine={0} />
-          <YAxis stroke="hsl(228, 9%, 64%)" orientation="right" tickLine={0} axisLine={false}/>
+          <YAxis stroke="hsl(228, 9%, 64%)" orientation="right" tickLine={0} axisLine={false} />
           <Tooltip />
           <Legend verticalAlign="top" align="right" height={45} iconType="circle" iconSize="10" wrapperStyle={{ paddingRight: "10px", fontSize: "14px" }} />
           <Bar dataKey="kilogram" name="Poids (kg)" fill="hsl(203, 9%, 17%)" radius={[50, 50, 0, 0]} width={10} />
@@ -54,6 +52,6 @@ const ActivityGraph = ({ id }) => {
 
 ActivityGraph.propTypes = {
   id: PropTypes.number.isRequired,
-}
+};
 
 export default ActivityGraph;
